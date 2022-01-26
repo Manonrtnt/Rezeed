@@ -6,7 +6,7 @@ async function fetchApi() {
    let data;
 
    try {
-      response = await fetch();
+      response = await fetch(url);
       if (response.ok) {      
          try {
             data = await response.json();
