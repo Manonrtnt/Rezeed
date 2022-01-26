@@ -11,11 +11,12 @@ function conformPassword() {
     const pwd1 = document.querySelector(`form[name=register_form] input[name=pw_user]`).value;
     const pwd2 = document.querySelector(`form[name=register_form] input[name=pwd2_user]`).value;
 
-    if (pwd1 != pwd2) {
+    console.log("pwd1 === pwd2 : ", pwd1 === pwd2)
+    if (pwd1 === pwd2) {
+        return true;
+    } else {
         alert("Et non ! Tu ne sais pas écrire deux fois un mdp, try again !")
         return false;
-    } else {
-        return true;
     }
 }
 
@@ -28,7 +29,7 @@ function validateInfo(type) {
     if (!validatePassword(password)) failedConstraints.push("password");
 
     if (type === "register_form") {
-        if (conformPassword()) {
+        if (!conformPassword()) {
             failedConstraints.push("Mots de passe qui ne correspondent pas");
             return failedConstraints;
         }

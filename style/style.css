@@ -58,3 +58,19 @@ nav>ul{
 li{
     margin-right:15px;
 }
+/*--------------------Effet de surlignement--------------------------------------*/
+::after{
+    display:block;
+    content:"";
+    width:0;
+    height:1px;
+    background-color:var(--font_01-bg-color);
+    transition: .4s; 
+}
+li:hover::after{
+    width: 100%;    
+    background-color: rgb(255, 255, 255);
+}
+form[name="register_form"]{
+    width = "70%"
+}

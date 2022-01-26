@@ -16,7 +16,7 @@ function connection() {
         const formattedFormData = new FormData(loginForm);
 
         const failed = validateInfo("connexion_form");
-        if (failed === []) {
+        if (failed.length === 0) {
             // Envoie à PHP
             const success = userQuery("login", formattedFormData);
             console.log(success);
@@ -28,10 +28,10 @@ function register() {
     const registerForm = document.querySelector("form[name=register_form]");
     registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        const formattedFormData = new FormData(loginForm);
+        const formattedFormData = new FormData(registerForm);
 
         const failed = validateInfo("register_form");
-        if (failed === []) {
+        if (failed.length === 0) {
             // Envoie à PHP
             const success = userQuery("register", formattedFormData);
             console.log(success);        

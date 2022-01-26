@@ -1,5 +1,4 @@
 <?php
-
    //============== USER QUERIES =====================//
 
    $createUser = "INSERT INTO user SET
