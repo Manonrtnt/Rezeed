@@ -58,6 +58,7 @@ nav>ul{
     color: white;
     float: right;
     margin-right: 25px;
+    margin-top:-12px;
 }
 li{
     margin-right:15px;
