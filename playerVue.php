@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> Player </title>
 
-   <script src="./script.js"></script>
-   <title> </title>
-</head>
-<body>
-
-</body>
+      <link rel="stylesheet" href="./style/style.css">
+      <script src="./scripts/player.js"></script>
+   </head>
+   <body>
+      <p> Page du player </p>
+   </body>
 </html>

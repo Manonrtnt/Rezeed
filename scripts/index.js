@@ -31,7 +31,7 @@ function conformPassword() {
 
 function validatePassword(password){
    const validationRegex = /^(?!.* )(?=.*[a-z])(?=.*[A-Z])(?=.*[?!@#$&|~°+*/%=])(?=.*[0-9]).{8}/;
-   return validationRegex.test(mdp);
+   return validationRegex.test(password);
 }
 
 function validatePseudo(pseudo) {
