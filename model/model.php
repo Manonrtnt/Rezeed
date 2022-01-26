@@ -1,7 +1,5 @@
 <?php
-   class Name {
-      public function __construct() {
-         
-      }
-   }
+   require './preparedQueries.php';
+   
+
 ?>

@@ -19,7 +19,7 @@ async function userQuery(data) {
 }
 
 function conformPassword() {
-   const pwd1 = document.getElementByName("mdp_user").value;
+   const pwd1 = document.getElementByName("pw_user").value;
    const pwd2 = document.getElementByName("pwd2_user").value;
    if (pwd1 != pwd2) {
       alert ("Les mots de passes ne correspondent pas")
@@ -40,7 +40,7 @@ function validatePseudo(pseudo) {
 }
 
 function validateInfo() {
-   const password = document.getElementByName("mdp_user").value;
+   const password = document.getElementByName("pw_user").value;
    const pseudo = document.getElementByName("login_user").value;
 
    const failedConstraints = [];

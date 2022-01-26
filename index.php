@@ -1,5 +1,5 @@
 <?php
-   include("./indexVue.php");
+   require "./indexVue.php";
 
    // if (isset($_POST[""])) {
 

@@ -33,7 +33,7 @@
                <p>Login</p>
                <input type="text" name="login_user" required>
                <p>Mot de passe</p>
-               <input type="text" name="mdp_user" required>
+               <input type="text" name="pw_user" required>
 
                <input type="submit" value="Connexion" required>
             </form>
@@ -41,19 +41,21 @@
             <form id="register_form">
                <h3>Créer un utilisateur</h3>
 
-               <p>Nom </p>
+               <p>Nom :</p>
                <input type="text" name="name_user" required>
-               <p>Prénom</p>
+               <p>Prénom :</p>
                <input type="text" name="first_name_user" required>
 
-               <p>Login</p>
+               <p>Login :</p>
                <input type="text" name="login_user" required>
-               <p>Mot de passe</p>
-               <input type="text" name="mdp_user" required>
-               <p>Confirmer mot de passe</p>
+               <p>Mot de passe :</p>
+               <input type="text" name="pw_user" required>
+               <p>Confirmer mot de passe :</p>
                <input type="text" name="pwd2_user" required>
+               <p>Email :</p>
+               <input type="email" name="login_user" required>
 
-               <select name=Preferences>
+               <select name=preferences_user>
                   <option value=classique>Classique</option>
                   <option value=electro>Electro</option>
                   <option value=jazz>Jazz</option>
