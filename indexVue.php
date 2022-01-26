@@ -7,6 +7,9 @@
       <title> Reezed </title>
 
       <link rel="stylesheet" href="style/style.css">
+      <script src="./scripts/modules/validation.js"></script>
+      <script src="./scripts/modules/formModules.js"></script>
+      <script src="./scripts/modules/fetchModules.js"></script>
       <script src="./scripts/index.js" defer></script>
    </head>
 
