@@ -1,11 +1,13 @@
 //== INFO: Client-side fetch on any API
+const url = "APIURL";
+
 async function fetchApi() {
    let response;
    let data;
 
    try {
-      response = await fetch(buildUrl());
-      if (response.ok) {
+      response = await fetch();
+      if (response.ok) {      
          try {
             data = await response.json();
             if (Object.keys(data)[0] === "errors") {  //== If response.json() returns an array of errors
