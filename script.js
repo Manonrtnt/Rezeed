@@ -17,3 +17,7 @@ async function userQuery(data) {
 
    return response;
 }
+
+function validatePassword(){
+   password = dpo
+}
