@@ -77,11 +77,20 @@ li:hover::after{
     background-color: rgb(255, 255, 255);
 }
 
+
 /*--------------------Formulaire--------------------------------------------------*/
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
 section{
     text-align: center;
-    margin: auto;
-    margin-top:150px;
+
+    margin: 15px;
     border-style: solid;
     width:25%;
     padding-top: 25px;
