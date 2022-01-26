@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title> Reezed </title>
 
-      <link rel="stylesheet" href="./style/style.css">
-      <script src="./scripts/index.js"></script>
+      <link rel="stylesheet" href="style/style.css">
+      <script src="./scripts/index.js" defer></script>
    </head>
 
    <body>   
@@ -28,7 +28,7 @@
 
       <main>
          <section>
-            <form id="connexion_form">
+            <form name="connexion_form">
                <h3> Connexion </h3>
                <p>Login</p>
                <input type="text" name="login_user" required>
@@ -38,7 +38,7 @@
                <input type="submit" value="Connexion" required>
             </form>
 
-            <form id="register_form">
+            <form name="register_form">
                <h3>Créer un utilisateur</h3>
 
                <p>Nom :</p>

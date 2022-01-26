@@ -1,11 +1,21 @@
-const form = document.querySelector("#form");
+// const formattedFormData = new FormData(form);
+// const registerForm = document.getElementsByName("register_form");
 
-form.addEventListener("submit", (e) => {
+const loginForm = document.querySelector("form[name=connexion_form]");
+
+loginForm.addEventListener("submit", (e) => {
    e.preventDefault();
 
-   const formattedFormData = new FormData(form);
-   userQuery(formattedFormData);
+   const failed = validateInfo("connexion_form");
+   console.log("failed : ", failed);
 });
+
+// registerForm.addEventListener("submit", (e) => {
+//    e.preventDefault();
+
+//    const failed = validateInfo("connexion");
+//    console.log("failed : ", failed);
+// });
 
 async function userQuery(data) {
    const response = await fetch                    
@@ -19,8 +29,8 @@ async function userQuery(data) {
 }
 
 function conformPassword() {
-   const pwd1 = document.getElementByName("pw_user").value;
-   const pwd2 = document.getElementByName("pwd2_user").value;
+   const pwd1 = document.getElementsByName("pw_user").value;
+   const pwd2 = document.getElementsByName("pwd2_user").value;
    if (pwd1 != pwd2) {
       alert ("Les mots de passes ne correspondent pas")
       return false;
@@ -39,19 +49,14 @@ function validatePseudo(pseudo) {
    return validationRegex.test(pseudo);
 }
 
-function validateInfo() {
-   const password = document.getElementByName("pw_user").value;
-   const pseudo = document.getElementByName("login_user").value;
+function validateInfo(type) {
 
+   const pseudo = document.querySelector(`form[name=${type}] input[name=login_user]`).value;
+   const password = document.querySelector(`form[name=${type}] input[name=pw_user]`).value;
    const failedConstraints = [];
-   const toValidate = {
-      pseudo: pseudo,
-      password: password
-   }
-   for (let obj of toValidate) {
-      if (!validatePseudo(obj.pseudo)) failedConstraints.push("pseudo"); 
-      if (!validatePassword(obj.password)) failedConstraints.push("password"); 
-   }
+
+   if (!validatePseudo(pseudo)) failedConstraints.push("pseudo"); 
+   if (!validatePassword(password)) failedConstraints.push("password"); 
 
    return failedConstraints;
 }
