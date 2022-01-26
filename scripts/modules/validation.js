@@ -8,8 +8,9 @@ function validatePseudo(pseudo) {
 }
 
 function conformPassword() {
-    const pwd1 = document.getElementsByName("pw_user").value;
-    const pwd2 = document.getElementsByName("pwd2_user").value;
+    const pwd1 = document.querySelector(`form[name=register_form] input[name=pw_user]`).value;
+    const pwd2 = document.querySelector(`form[name=register_form] input[name=pwd2_user]`).value;
+
     if (pwd1 != pwd2) {
         alert("Les mots de passes ne correspondent pas")
         return false;
@@ -27,7 +28,7 @@ function validateInfo(type) {
     if (!validatePassword(password)) failedConstraints.push("password");
 
     if (type === "register_form") {
-        if (!conformPassword()) {
+        if (conformPassword()) {
             failedConstraints.push("Mots de passe qui ne correspondent pas");
             return failedConstraints;
         }

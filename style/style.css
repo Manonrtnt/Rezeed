@@ -1,17 +1,43 @@
-/*----reset-----*/
+/*--------------------reset---------------------------------------------------*/
 *{
     margin:0;
     padding:0;
     list-style-type: none;
     text-decoration:none;
 }
-/*----navbar-----*/
+
+/*------------------Variables pour les pallettes de couleurs------------------*/
+:root {
+    /*---------Couleur du body-------------*/
+    --body_01-bg-color: rgb(255, 248, 248);
+    --body_02-bg-color: rgb(255, 209, 209);
+    --body_03-bg-color: rgb(236, 240, 255);
+    --body_04-bg-color: rgb(218, 255, 211);
+    /*---------Couleur de la navbar--------*/
+    --nav_01-bg-color: rgb(0, 0, 0);
+    --nav_02-bg-color: rgb(255, 209, 209);
+    --nav_03-bg-color: rgb(148, 169, 248);
+    --nav_04-bg-color: rgb(218, 255, 211);
+    /*---------Couleur du footer-----------*/
+    --footer_01-bg-color: rgb(0, 0, 0);
+    --footer_02-bg-color: rgb(255, 209, 209);
+    --footer_03-bg-color: rgb(236, 240, 255);
+    --footer_04-bg-color: rgb(218, 255, 211);
+    /*---------Couleur de la police--------*/
+    --font_01-bg-color: rgb(0, 0, 0);
+    --font_02-bg-color: rgb(255, 255, 255);
+    --font_03-bg-color: rgb(28, 44, 100);
+    --font_04-bg-color: rgb(29, 48, 25);
+}
+
+/*------------------navbar-----------------------------------------------------*/
 header{
     width: 100%;
     height: 70px;
     background-color: black;
 }
-/*----footer-----*/
+
+/*------------------footer-----------------------------------------------------*/
 footer{
     width: 100%;
     height: 70px;
@@ -19,6 +45,13 @@ footer{
     color: white;
     
 }
+/*-------------------navbar lien de droite--------------------------------------*/
 nav>ul{
+    display:flex;
     color: white;
+    float: right;
+    margin-right: 25px;
+}
+li{
+    margin-right:15px;
 }
