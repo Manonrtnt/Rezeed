@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 26, 2022 at 02:59 PM
+-- Generation Time: Jan 26, 2022 at 03:01 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -51,7 +51,7 @@ CREATE TABLE `form` (
 
 CREATE TABLE `genre` (
   `id_genre` int NOT NULL,
-  `name_genre` varchar(50) NOT NULL
+  `name_genre` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
@@ -64,7 +64,7 @@ CREATE TABLE `playlist` (
   `id_playlist` int NOT NULL,
   `id_user` int DEFAULT NULL,
   `id_genre` int DEFAULT NULL,
-  `name_playlist` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+  `name_playlist` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
@@ -75,7 +75,7 @@ CREATE TABLE `playlist` (
 
 CREATE TABLE `skin` (
   `id_skin` int NOT NULL,
-  `name_skin` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+  `name_skin` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
@@ -86,8 +86,8 @@ CREATE TABLE `skin` (
 
 CREATE TABLE `track` (
   `id_track` int NOT NULL,
-  `name_track` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `url_track` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+  `name_track` varchar(50) DEFAULT NULL,
+  `url_track` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
@@ -98,20 +98,12 @@ CREATE TABLE `track` (
 
 CREATE TABLE `user` (
   `id_user` int NOT NULL,
-  `name_user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `first_name_user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `login_user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `pw_user` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `email_user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `preferences_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+  `firstName_user` varchar(50) DEFAULT NULL,
+  `lastName_user` varchar(50) DEFAULT NULL,
+  `login_user` varchar(50) DEFAULT NULL,
+  `pw_user` varchar(100) DEFAULT NULL,
+  `preferences_user` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id_user`, `name_user`, `first_name_user`, `login_user`, `pw_user`, `email_user`, `preferences_user`) VALUES
-(1, 'azfzaf', 'azfazf', 'azfazfaz', 'azfZF151%azf', 'azaz@azv.co', 'classique');
 
 --
 -- Indexes for dumped tables
@@ -195,7 +187,7 @@ ALTER TABLE `track`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
