@@ -57,7 +57,7 @@
                <p>Confirmer mot de passe :</p>
                <input type="text" name="pwd2_user" required>
                <p>Email :</p>
-               <input type="email" name="login_user" required>
+               <input type="email" name="email_user" required>
 
                <select name=preferences_user>
                   <option value=classique>Classique</option>
