@@ -1,17 +1,19 @@
-// const formattedFormData = new FormData(form);
-
 // check formModule.js
-function main(){
+(function main(){
     connection();
     register();
-}
+})();
 
-async function userQuery(data) {
-    const response = await fetch
-        (
-            `./index.php?`, {
-            method: 'POST',
-            body: data
-        });
-    return response;
-}
+
+
+
+// const formattedFormData = new FormData(form);
+// async function userQuery(data) {
+//     const response = await fetch
+//         (
+//             `./index.php?`, {
+//             method: 'POST',
+//             body: data
+//         });
+//     return response;
+// }

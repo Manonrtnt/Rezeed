@@ -20,7 +20,6 @@ function conformPassword() {
 }
 
 function validateInfo(type) {
-
     const pseudo = document.querySelector(`form[name=${type}] input[name=login_user]`).value;
     const password = document.querySelector(`form[name=${type}] input[name=pw_user]`).value;
     const failedConstraints = [];
