@@ -12,7 +12,7 @@ function conformPassword() {
     const pwd2 = document.querySelector(`form[name=register_form] input[name=pwd2_user]`).value;
 
     if (pwd1 != pwd2) {
-        alert("Les mots de passes ne correspondent pas")
+        alert("Et non ! Tu ne sais pas écrire deux fois un mdp, try again !")
         return false;
     } else {
         return true;
