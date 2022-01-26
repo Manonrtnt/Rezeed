@@ -76,5 +76,18 @@ li:hover::after{
 section{
     text-align: center;
     margin: auto;
+    margin-top:150px;
+    border-style: solid;
+    width:25%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 5px;
+    background-color: rgb(82, 82, 82, 0.5);
+    padding:5px;
 }
-
+input{
+    border-radius: 5px;
+}
+button{
+    padding:10px;
+}
