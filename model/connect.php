@@ -5,8 +5,8 @@
         // ! Gaffe MDP
         $database = new PDO($dsn, "root", "root", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         $database -> exec("set names utf8");
-        $query = $database -> prepare($prepared);
 
+        $query = $database -> prepare($prepared);
         try {
             $success = $query->execute($queryArgs); 
         } catch (Exception $e) { 

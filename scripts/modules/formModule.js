@@ -16,6 +16,7 @@ function connection() {
         const formattedFormData = new FormData(loginForm);
 
         const failed = validateInfo("connexion_form");
+        console.log("failed : ", failed)
         if (failed.length === 0) {
             // Envoie à PHP
             const success = userQuery("login", formattedFormData);

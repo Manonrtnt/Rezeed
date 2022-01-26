@@ -7,7 +7,6 @@
       login_user = :login_user,
       pw_user = :pw_user,
       email_user = :email_user,
-
       preferences_user = :preferences_user
    ";
    $returnUser = "SELECT * FROM user 

@@ -1,21 +1,19 @@
 <?php
     require "./indexVue.php";
+    require "./model/connect.php";
     require "./model/preparedQueries.php";
 
     // $_SESSION
-    $myfile = fopen("testfile.txt", "w");
-    fwrite($myfile, $txt);
-
+    
     if (isset($_GET["type"])) {
         if ($_GET["type"] === "login") {
             $condition = isset($_POST['login_user']) && 
-                        isset($_POST['pw_user']);
+            isset($_POST['pw_user']);
             
             if ($condition) {
                 $loginUser = $_POST['login_user'];
                 $password = $_POST['pw_user'];                  // ! Hash password here
-
-                // Fait nos trucs 
+                
             }
         }
         

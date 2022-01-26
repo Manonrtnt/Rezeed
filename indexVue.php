@@ -1,80 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title> Reezed </title>
 
-      <link rel="stylesheet" href="style/style.css">
-      <script src="./scripts/modules/fetchModule.js"></script>
-      
-      <script src="./scripts/modules/validation.js" defer></script>
-      <script src="./scripts/modules/formModule.js" defer></script>
-      <script src="./scripts/index.js" defer></script>
-   </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Reezed </title>
 
-   <body>   
-      <header>
-         <nav id="nav">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="./scripts/modules/fetchModule.js"></script>
+
+    <script src="./scripts/modules/validation.js" defer></script>
+    <script src="./scripts/modules/formModule.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
             <h1>Redeez</h1>
             <ul id="Navbar_links">
-               <li>Acceuil</li>
-               <li>Inscription</li>
-               <li>Connexion</li>
-               <li>A propos</li>
+                <li>Acceuil</li>
+                <li>Inscription</li>
+                <li>Connexion</li>
+                <li>A propos</li>
             </ul>
             <div class="burger">
-               <div class="bar"></div>
+                <div class="bar"></div>
             </div>
-         </nav>
-      </header>
+        </nav>
+    </header>
 
-      <main>
-         <section>
+    <main>
+        <section>
             <form name="connexion_form">
-               <h3> Connexion </h3>
-               <p>Login</p>
-               <input type="text" name="login_user" required>
-               <p>Mot de passe</p>
-               <input type="text" name="pw_user" required>
+                <h3> Connexion </h3>
+                <p>Login</p>
+                <input type="text" name="login_user" required>
+                <p>Mot de passe</p>
+                <input type="text" name="pw_user" required><br/>
 
-               <input type="submit" value="Connexion" required>
+                <input type="submit" value="Connexion" required>
             </form>
 
             <form name="register_form">
-               <h3>Créer un utilisateur</h3>
+                <h3>Créer un utilisateur</h3>
 
-               <p>Nom :</p>
-               <input type="text" name="name_user" required>
-               <p>Prénom :</p>
-               <input type="text" name="first_name_user" required>
+                <p>Nom :</p>
+                <input type="text" name="name_user" required>
+                <p>Prénom :</p>
+                <input type="text" name="first_name_user" required>
 
-               <p>Login :</p>
-               <input type="text" name="login_user" required>
-               <p>Mot de passe :</p>
-               <input type="text" name="pw_user" required>
-               <p>Confirmer mot de passe :</p>
-               <input type="text" name="pwd2_user" required>
-               <p>Email :</p>
-               <input type="email" name="email_user" required>
+                <p>Login :</p>
+                <input type="text" name="login_user" required>
+                <p>Mot de passe :</p>
+                <input type="text" name="pw_user" required>
+                <p>Confirmer mot de passe :</p>
+                <input type="text" name="pwd2_user" required>
+                <p>Email :</p>
+                <input type="email" name="email_user" required><br/>
 
-               <select name=preferences_user>
-                  <option value=classique>Classique</option>
-                  <option value=electro>Electro</option>
-                  <option value=jazz>Jazz</option>
-                  <option value=Pop>Pop</option>
-                  <option value=rap>Rap</option>
-                  <option value=reggae>Reggae</option>
-                  <option value=rock>Rock</option>
-               </select>
-               <input type="submit" value="Envoyer !" required>
+                <select name=preferences_user>
+                    <option value=classique>Classique</option>
+                    <option value=electro>Electro</option>
+                    <option value=jazz>Jazz</option>
+                    <option value=Pop>Pop</option>
+                    <option value=rap>Rap</option>
+                    <option value=reggae>Reggae</option>
+                    <option value=rock>Rock</option>
+                </select>
+                <input type="submit" value="Envoyer !" required>
             </form>
-         </section>
-      </main>
+        </section>
+    </main>
 
-      <footer>
-         <h3>Developped by : ManonTNT, Vazn and Riozacki</h3>
-      </footer>
-   </body>
+    <footer>
+        <h3>Developped by : ManonTNT, Vazn and Riozacki</h3>
+    </footer>
+</body>
+
 </html>

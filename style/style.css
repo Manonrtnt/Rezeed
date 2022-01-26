@@ -71,6 +71,10 @@ li:hover::after{
     width: 100%;    
     background-color: rgb(255, 255, 255);
 }
-form[name="register_form"]{
-    width = "70%"
+
+/*--------------------Formulaire--------------------------------------------------*/
+section{
+    text-align: center;
+    margin: auto;
 }
+
