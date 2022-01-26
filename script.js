@@ -19,5 +19,5 @@ async function userQuery(data) {
 }
 
 function validatePassword(){
-   password = dpo
+   password = document.getElementByName("mdp_user");
 }
