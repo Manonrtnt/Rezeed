@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,28 @@
 
    <script src="./script.js"></script>
    <title>Reezed</title>
+
 </head>
+
 <body>
+
+   <link rel="stylesheet" href="navbar.css">
+   
+   <header>
+      <nav id="nav">
+         <h1>Redeez</h1>
+         <ul id="Navbar_links">
+            <li>Acceuil</li>
+            <li>Inscription</li>
+            <li>Connexion</li>
+            <li>A propos</li>
+         </ul>
+         <div class="burger">
+            <div class="bar"></div>
+         </div>
+      </nav>
+   </header>
+
    <div>
       <form id="connexion_form">
          <h3> Connexion </h3>
@@ -24,7 +45,7 @@
 
       <form id="register_form">
          <h3>Créer un utilisateur</h3>
-         
+
          <p>Nom </p>
          <input type="text" name="name_user" required>
 
@@ -38,7 +59,7 @@
          <input type="text" name="mdp_user" required>
 
          <p>Confirmer mot de passe</p>
-         <input type="text" name="mdp_user" required>
+         <input type="text" name="pwd2_user" required>
 
          <select name=Preferance>
             <option value=classique>Classique</option>
@@ -52,5 +73,11 @@
          <input type="submit" value="Créer" required>
       </form>
    </div>
+
+   <footer>
+      <h3>Developped by : ManonTNT, Vazn and Riozacki</h3>
+   </footer>
+
 </body>
+
 </html>
