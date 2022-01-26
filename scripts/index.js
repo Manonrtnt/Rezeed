@@ -5,8 +5,6 @@
 })();
 
 
-
-
 // const formattedFormData = new FormData(form);
 // async function userQuery(data) {
 //     const response = await fetch
