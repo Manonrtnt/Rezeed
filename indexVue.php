@@ -40,7 +40,7 @@
                 <p>Mot de passe</p>
                 <input type="text" name="pw_user" required><br/>
 
-                <input type="submit" value="Connexion" required>
+                <input id="bt2" type="submit" value="Connexion" required>
             </form>
 
             <form name="register_form">
@@ -69,7 +69,7 @@
                     <option value=reggae>Reggae</option>
                     <option value=rock>Rock</option>
                 </select>
-                <input type="submit" value="Envoyer !" required>
+                <input id="bt1"type="submit" value="Envoyer !" required>
             </form>
         </section>
     </main>
