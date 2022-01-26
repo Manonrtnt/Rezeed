@@ -12,21 +12,22 @@
    <div>
       <form action="" method="POST">
          <h3>Créer un utilisateur</h3>
+         
          <p>Nom </p>
          <input type="text" name="name_user" required>
-         <br>
+
          <p>Prénom</p>
          <input type="text" name="first_name_user" required>
-         <br>
+
          <p>Login</p>
          <input type="text" name="login_user" required>
-         <br>
+
          <p>Mot de passe</p>
          <input type="text" name="mdp_user" required>
-         <br>
+
          <p>Confirmer mot de passe</p>
          <input type="text" name="mdp_user" required>
-         <br>
+
          <select name=Preferance>
             <option value=classique>Classique</option>
             <option value=electro>Electro</option>
