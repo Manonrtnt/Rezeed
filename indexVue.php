@@ -10,7 +10,19 @@
 </head>
 <body>
    <div>
-      <form action="" method="POST">
+      <form id="connexion_form">
+         <h3> Connexion </h3>
+
+         <p>Login</p>
+         <input type="text" name="login_user" required>
+
+         <p>Mot de passe</p>
+         <input type="text" name="mdp_user" required>
+
+         <input type="submit" value="Conenxion" required>
+      </form>
+
+      <form id="register_form">
          <h3>Créer un utilisateur</h3>
          
          <p>Nom </p>
@@ -37,7 +49,6 @@
             <option value=reggae>Reggae</option>
             <option value=rock>Rock</option>
          </select>
-         </br>
          <input type="submit" value="Créer" required>
       </form>
    </div>
