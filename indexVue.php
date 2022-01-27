@@ -37,7 +37,7 @@
       <main>
     
          <section>
-            <form id="connexion_form">
+            <form name="connexion_form">
                <h3 style="font-size:1.5em";> Connexion </h3>
                <p>Login</p>
                <input type="text" name="login_user" required>
@@ -47,7 +47,7 @@
                <input id="bt1" type="submit" value="Connexion" required>
             </form>
 
-            <form id="register_form">
+            <form name="register_form">
                <h3>Créer un utilisateur</h3>
 
                <p>Nom :</p>
@@ -62,7 +62,7 @@
                <p>Confirmer mot de passe :</p>
                <input type="password" name="pwd2_user" required>
                <p>Email :</p>
-               <input type="email" name="login_user" required><br/>
+               <input type="email" name="email_user" required><br/>
 
                <select name=preferences_user>
                   <option value=classique>Classique</option>

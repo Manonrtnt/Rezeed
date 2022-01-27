@@ -2,8 +2,8 @@
 //== Le controleur renvoie toute la page HTML en retour de nimporte quelle requête :/
 
 function connectionForm() {
-    console.log("loginForm : ")
     const loginForm = document.querySelector("form[name=connexion_form]");
+    console.log("loginForm : ", loginForm)
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
