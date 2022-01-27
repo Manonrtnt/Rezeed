@@ -6,6 +6,7 @@
    if (isset($_GET["type"])) {
        
        if ($_GET["type"] === "login") {
+           fileLog("On entre dans php");
            connect($returnUser);
 
         //    if ($res) {

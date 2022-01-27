@@ -24,7 +24,9 @@ function registerForm() {
         const failed = validateInfo(pseudo, password, password2);
         
         if (failed.length === 0) {
-            userQuery("./php/forms.php?type=register", registerForm); // Envoie à index.php
+
+            let resp = userQuery("./php/forms.php?type=register", registerForm); // Envoie à index.php
+            console.log("resp : ", resp);
         }
     });
 }
