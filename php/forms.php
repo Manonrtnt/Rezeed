@@ -4,7 +4,6 @@
    require "./helpers.php";
 
    if (isset($_GET["type"])) {
-       
        if ($_GET["type"] === "login") {
            connect($returnUser);
            
@@ -16,8 +15,8 @@
                 }
                 
         if ($_GET["type"] === "register") {
-           fileLog("On entre dans php");
-           register($createUser);
-       }
+            fileLog("On entre dans php");
+            register($createUser);
+        }
    }
 ?>

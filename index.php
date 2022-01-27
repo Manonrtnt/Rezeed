@@ -38,7 +38,7 @@
         <main>
     
             <section>
-            <form name="connexion_form">
+            <form id="connexion_form">
                 <h3 style="font-size:1.5em";> Connexion </h3>
                 <p>Login</p>
                 <input type="text" name="login_user" required>
@@ -48,7 +48,7 @@
                 <input id="bt1" type="submit" value="Connexion" required>
             </form>
 
-            <form name="register_form">
+            <form id="register_form">
                 <h3>Créer un utilisateur</h3>
 
                 <p>Nom :</p>
