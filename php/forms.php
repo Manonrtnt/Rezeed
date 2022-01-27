@@ -8,9 +8,9 @@
             $authorization = connect($returnUser);
 
             if ($authorization) {
-                echo "Connection autorisée";
+                echo True;
             } else {
-                echo "Connection interdite";
+                echo False;
             }
         }
                 

@@ -49,5 +49,9 @@ async function getServerAnswer(data) {
 
     // Redirection de page
     // Changement de theme
-    console.log("Connection : ", data);
+    if (data) {
+        location.assign("./player.php?");
+    } else {
+        alert("Arrétez d'essayer de vous introduire sur notre site !!!");
+    }
 }
