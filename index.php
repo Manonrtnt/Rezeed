@@ -2,7 +2,6 @@
     // $_SESSION Pour gérer les sessions
     require "./indexVue.php";
     require "./php/model/connect.php";
-    require "./php/queries/preparedQueries.php";
     require "./php/queries/userQueries.php";
     require "./php/helpers.php";
 
