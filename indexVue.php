@@ -8,8 +8,8 @@
       <link rel="stylesheet" href="./style/style.css">
 
       <script src="./scripts/modules/validation.js"></script>
-      <script src="./scipts/modules/formModule.js" defer></script>
-      <script src="./scripts/index.js"></script>
+      <script src="./scripts/modules/formModule.js" defer></script>
+      <script src="./scripts/index.js" defer></script>
    </head>
 
    <body>   

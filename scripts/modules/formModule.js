@@ -2,7 +2,9 @@
 //== Le controleur renvoie toute la page HTML en retour de nimporte quelle requête :/
 
 function connectionForm() {
+    console.log("loginForm : ")
     const loginForm = document.querySelector("form[name=connexion_form]");
+
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
         let resp = userQuery("./index.php?type=login", loginForm); // Envoie à index.php

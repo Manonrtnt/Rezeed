@@ -8,10 +8,9 @@
     if (isset($_GET["type"])) {
         
         if ($_GET["type"] === "login") {
-            // echo "<p> Whatever </p>";
+            connect($returnUser);
 
             // header('Location: ./player.php'); //== Return new page ?!
-            // connect($preparedQuery);
         }
         
         if ($_GET["type"] === "register") {

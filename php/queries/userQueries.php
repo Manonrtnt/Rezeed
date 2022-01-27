@@ -10,7 +10,6 @@
    $returnUser = "SELECT * FROM user 
       WHERE login_user = :login_user AND pw_user = :pw_user
    ";
-   $updateUser = "";
 
    function register($preparedQuery) {
       $condition = (
@@ -44,6 +43,8 @@
       if ($condition) {
          $loginUser = $_POST['login_user'];
          $password = $_POST['pw_user'];                  // ! Hash password here  
+
+         
       }
    }
 ?>
