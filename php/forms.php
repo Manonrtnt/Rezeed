@@ -16,8 +16,14 @@
         }
                 
         if ($_GET["type"] === "register") {
-            fileLog("On entre dans php");
-            register();                             // Autorise inscription
+
+            $authorization = register();            // Autorise inscription
+
+            if ($authorization) {
+                echo True;                          // Retourne vers JS
+            } else {
+                
+            }
         }
    }
 ?>

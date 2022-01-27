@@ -26,7 +26,6 @@
          }
       }
    }
-
    // Retourne True si le pseudo / email / mot de passe est disponible 
    // Sinon retourne "Peudo" ou "Email"
    function register() {
@@ -38,8 +37,7 @@
          isset($_POST['email_user']) &&
          isset($_POST['preferences_user'])
       );
-      if ($condition) {
-         
+      if ($condition) {  
          $registerCheck = "INSERT INTO users SET         //== Todo: Check si login_user et email => disponible
          name_user = :name_user, 
          first_name_user = :first_name_user, 
