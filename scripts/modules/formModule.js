@@ -3,7 +3,6 @@
 
 function connectionForm() {
     const loginForm = document.querySelector("form[name=connexion_form]");
-    console.log("loginForm : ", loginForm)
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
