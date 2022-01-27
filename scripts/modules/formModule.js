@@ -6,7 +6,8 @@ function connectionForm() {
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        let resp = userQuery("./index.php?type=login", loginForm); // Envoie à index.php
+        let resp = userQuery("./php/forms.php?type=login", loginForm); // Envoie à index.php
+        console.log("resp : ", resp)
 
         // if (true) {
         //     location.assign("./player.php"); // or
@@ -24,7 +25,9 @@ function registerForm() {
         const failed = validateInfo(pseudo, password, password2);
         
         if (failed.length === 0) {
-            userQuery("./index.php?type=register", registerForm); // Envoie à index.php
+            let resp = userQuery("./php/forms.php?type=register", registerForm); // Envoie à index.php
+            console.log("resp : ", resp)
+
         }
     });
 }

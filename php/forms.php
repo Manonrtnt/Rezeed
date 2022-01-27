@@ -1,7 +1,7 @@
 <?php
-   require "./php/model/connect.php";
-   require "./php/queries/userQueries.php";
-   require "./php/helpers.php";
+   require "./model/connect.php";
+   require "./queries/userQueries.php";
+   require "./helpers.php";
 
    if (isset($_GET["type"])) {
        
