@@ -8,7 +8,6 @@
          isset($_POST['email_user']) &&
          isset($_POST['preferences_user'])
       );
-
       if ($condition) {
          $password = $_POST['pw_user'];                  // ! Hash password here
 

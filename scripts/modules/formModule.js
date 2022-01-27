@@ -1,15 +1,14 @@
+//== Comment réussir à récupérer le retour du serveur ? (Identifiants corrects etc)
+//== Le controleur renvoie toute la page HTML en retour de nimporte quelle requête :/
+
 function connectionForm() {
     const loginForm = document.querySelector("form[name=connexion_form]");
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        
-        const pseudo = document.querySelector(`form[name=connexion_form] input[name=login_user]`).value;
-        const password = document.querySelector(`form[name=connexion_form] input[name=pw_user]`).value;
-        const failed = validateInfo(pseudo, password);
-        
-        if (failed.length === 0) {
-            userQuery("login", loginForm); // Envoie à index.php
-        }
+        let resp = userQuery("./index.php?type=login", loginForm); // Envoie à index.php
+        // if (true) {
+        //     location.assign("./player.php"); // or
+        // }
     });
 }
 function registerForm() {
@@ -23,19 +22,20 @@ function registerForm() {
         const failed = validateInfo(pseudo, password, password2);
         
         if (failed.length === 0) {
-            userQuery("register", registerForm); // Envoie à index.php
+            userQuery("./index.php?type=register", registerForm); // Envoie à index.php
         }
     });
 }
-async function userQuery(type, form) {
+async function userQuery(url, form) {
     const data = new FormData(form);
     const response = await fetch 
     (
-        `./index.php?type=${type}`, {
-        method: 'POST',
-        body: data
+        url, {
+            method: 'POST',
+            body: data
     });
-
-    console.log("response : ", response);
+    // const text = await response.text();
+    // console.log("text : ", text);
+    
     return response;
 }
