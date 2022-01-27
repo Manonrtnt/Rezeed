@@ -8,9 +8,7 @@
        if ($_GET["type"] === "login") {
            $res = connect($returnUser);
 
-           echo $res; // 
-
-           // header('Location: ./player.php'); //== Return new page ?!
+           echo "test"; // 
        }
        
        if ($_GET["type"] === "register") {

@@ -6,8 +6,7 @@ function connectionForm() {
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        let resp = userQuery("./php/forms.php?type=login", loginForm); // Envoie à index.php
-        console.log("resp : ", resp)
+        userQuery("./php/forms.php?type=login", loginForm); // Envoie à index.php
 
         // if (true) {
         //     location.assign("./player.php"); // or
@@ -25,9 +24,7 @@ function registerForm() {
         const failed = validateInfo(pseudo, password, password2);
         
         if (failed.length === 0) {
-            let resp = userQuery("./php/forms.php?type=register", registerForm); // Envoie à index.php
-            console.log("resp : ", resp)
-
+            userQuery("./php/forms.php?type=register", registerForm); // Envoie à index.php
         }
     });
 }
@@ -38,9 +35,13 @@ async function userQuery(url, form) {
         url, {
             method: 'POST',
             body: data
-    });
-    // const text = await response.text();
-    // console.log("text : ", text);
-    
+    });   
+    const servAnswer = await response.text();
+    getServerAnswer(servAnswer);
+
     return response;
+}
+
+async function getServerAnswer(data) {
+    console.log("data : ", data);
 }

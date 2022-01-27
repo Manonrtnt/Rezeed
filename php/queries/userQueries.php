@@ -49,7 +49,13 @@
             ':pw_user' => $hashed_pw
          ));
 
-         fileLog($resp[0]);
+         // if (user correspond) {
+         //    return 1;
+         // }
+         // else (user correspond) {
+         //    return 0;
+         // }
+
       }
    }
 ?>
