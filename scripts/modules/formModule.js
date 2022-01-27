@@ -26,7 +26,6 @@ function registerForm() {
         if (failed.length === 0) {
 
             let resp = userQuery("./php/forms.php?type=register", registerForm); // Envoie à index.php
-            console.log("resp : ", resp);
         }
     });
 }
@@ -50,6 +49,5 @@ async function getServerAnswer(data) {
 
     // Redirection de page
     // Changement de theme
-
-    console.log("data : ", data);
+    console.log("Connection : ", data);
 }

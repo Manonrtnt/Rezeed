@@ -7,8 +7,8 @@
       email_user = :email_user,
       preferences_user = :preferences_user
    ";
-   $returnUser = "SELECT login_user, pw_user FROM users WHERE login_user = :login_user 
-                  AND pw_user = '7aae59ca23176a31e4269b2ec8e2c59a3eb02c90'";
+   $returnUser = "SELECT * FROM users 
+   WHERE login_user = :login_user AND pw_user = :pw_user";
 
    function register($preparedQuery) {
       $condition = (
@@ -42,33 +42,22 @@
       
       if ($condition) {
          $password = $_POST['pw_user'];                  
-         // $hashed_pw = sha1($password, false);
-         
+         $hashed_pw = sha1($password);    // Chaine
+
          // $response[0] = Promise return
          // $response[1] = Query return
-
-         $response = queryDatabase($preparedQuery, array(         
+         
+         $response = queryDatabase($preparedQuery, array(      // Si pas de données correspondante => retourne False    
             ':login_user' => $_POST['login_user'],
-            // ':pw_user' => $hashed_pw
+            ':pw_user' => $hashed_pw
          ));  
-         $data = $response[1]->fetch();                     //== Note : Fetch sql content from query
-
-         $fichier = fopen("./test.txt", 'w+');
-         fwrite($fichier, count($data) . "\n");
-
-
-
-
-         // for ($i=0 ; $i<count($data) ; $i++) {
-         //     fwrite($fichier, "i = " . $i . " " . (string) $data[$i] . "\n");
-         // }
-
-         // if ($resp[]) {
-         //    return True;
-         // }
-         // else {
-         //    return False;
-         // }
+         $array = $response[1]->fetch();
+         
+         if ($array === False) {
+            return False;
+         } else {
+            return True;
+         }
       }
    }
 ?>
