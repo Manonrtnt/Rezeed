@@ -42,11 +42,14 @@
       );
       
       if ($condition) {
-         $loginUser = $_POST['login_user'];
          $password = $_POST['pw_user'];                  // ! Hash password here  
          $hashed_pw = sha1($password, false);
+         $resp = queryDatabase($preparedQuery, array(
+            ':login_user' => $_POST['login_user'],
+            ':pw_user' => $hashed_pw
+         ));
 
-
+         fileLog($resp[0]);
       }
    }
 ?>

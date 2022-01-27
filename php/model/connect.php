@@ -8,7 +8,9 @@
 
         $query = $database -> prepare($prepared);
         try {
-            $success = $query->execute($queryArgs); 
+            $success = $query->execute($queryArgs);
+            
+
         } catch (Exception $e) { 
             die("La requête a échoué !");
         }
