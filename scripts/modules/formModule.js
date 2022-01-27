@@ -1,16 +1,9 @@
-//== Comment réussir à récupérer le retour du serveur ? (Identifiants corrects etc)
-//== Le controleur renvoie toute la page HTML en retour de nimporte quelle requête :/
-
 function connectionForm() {
     const loginForm = document.querySelector("#connexion_form");
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        userQuery("./php/forms.php?type=login", loginForm); // Envoie à index.php
-
-        // if (true) {
-        //     location.assign("./player.php"); // or
-        // }
+        userQuery("./php/forms.php?type=login", loginForm); // Envoie requête au controleur => index.php
     });
 }
 function registerForm() {
@@ -24,12 +17,11 @@ function registerForm() {
         const failed = validateInfo(pseudo, password, password2);
         
         if (failed.length === 0) {
-
-            let resp = userQuery("./php/forms.php?type=register", registerForm); // Envoie à index.php
+            userQuery("./php/forms.php?type=register", registerForm); // Envoie requête au controleur => index.php
         }
     });
 }
-async function userQuery(url, form) {
+async function userQuery(url, form) {        // Gère les requêtes au controleur => index.php
     const data = new FormData(form);
     const response = await fetch 
     (
@@ -38,14 +30,13 @@ async function userQuery(url, form) {
             body: data
     });   
 
-    const servAnswer = await response.text();
+    const servAnswer = await response.text(); // Transforme le retour en texte
 
-    getServerAnswer(servAnswer);
+    getServerAnswer(servAnswer);              
 
     return response;
 }
-
-async function getServerAnswer(data) {
+async function getServerAnswer(data) {       // Traite le retour des requêtes
 
     // Redirection de page
     // Changement de theme

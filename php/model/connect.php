@@ -1,4 +1,6 @@
 <?php
+    // Retourne $success qui contient des informations sur le succès de la requête BDD
+    // Retourne $query qui permet de traiter les résultat de la requête BDD
     function queryDatabase($prepared, $queryArgs = NULL) { 
         $dsn = "mysql:host=localhost;dbname=rezeed";
 

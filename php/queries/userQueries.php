@@ -10,6 +10,7 @@
    $returnUser = "SELECT * FROM users 
    WHERE login_user = :login_user AND pw_user = :pw_user";
 
+   // Retourne True si le pseudo / email / mot de passe est disponible // Sinon Faux
    function register($preparedQuery) {
       $condition = (
          isset($_POST['name_user']) &&
@@ -34,6 +35,7 @@
       }
    }
 
+   // Retourne True si la combinaison Pseudo / Mot de passe est valide // Sinon Faux
    function connect($preparedQuery) {
       $condition = (
          isset($_POST['login_user']) && 
