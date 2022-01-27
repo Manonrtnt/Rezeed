@@ -6,17 +6,17 @@
    if (isset($_GET["type"])) {
        
        if ($_GET["type"] === "login") {
-           fileLog("On entre dans php");
            connect($returnUser);
-
-        //    if ($res) {
-        //        echo "connection autorisée";
-        //    } else {
-        //        echo "connection interdite";
-        //    }
-       }
-       
-       if ($_GET["type"] === "register") {
+           
+           //    if ($res) {
+               //        echo "connection autorisée";
+               //    } else {
+                   //        echo "connection interdite";
+                   //    }
+                }
+                
+        if ($_GET["type"] === "register") {
+           fileLog("On entre dans php");
            register($createUser);
        }
    }
