@@ -3,13 +3,13 @@
     require "./queries/userQueries.php";
     require "./helpers.php";
 
-    // Selon le type de formulaire, apelle les fonctions correspondantes
+    // Apelle les fonctions correspondantes selon le type de formulaire
     if (isset($_GET["type"])) {
         if ($_GET["type"] === "login") {
-            $authorization = connect($returnUser);  // Autorise connection
+            $authorization = connect();             // Autorise connection
 
             if ($authorization) {
-                echo True;                          // Echo vers JS
+                echo True;                          // Retourne vers JS
             } else {
                 echo False;
             }
@@ -17,7 +17,7 @@
                 
         if ($_GET["type"] === "register") {
             fileLog("On entre dans php");
-            register($createUser);                  // Autorise inscription
+            register();                             // Autorise inscription
         }
    }
 ?>

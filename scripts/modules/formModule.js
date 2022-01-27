@@ -29,7 +29,6 @@ async function userQuery(url, form) {        // Gère les requêtes au controleu
             method: 'POST',
             body: data
     });   
-
     const servAnswer = await response.text(); // Transforme le retour en texte
 
     getServerAnswer(servAnswer);              
@@ -38,10 +37,8 @@ async function userQuery(url, form) {        // Gère les requêtes au controleu
 }
 async function getServerAnswer(data) {       // Traite le retour des requêtes
 
-    // Redirection de page
-    // Changement de theme
     if (data) {
-        location.assign("./player.php?");
+        location.assign("./player.php?");    // Redirection de page
     } else {
         alert("Arrétez d'essayer de vous introduire sur notre site !!!");
     }
