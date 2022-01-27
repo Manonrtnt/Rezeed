@@ -6,9 +6,13 @@
    if (isset($_GET["type"])) {
        
        if ($_GET["type"] === "login") {
-           $res = connect($returnUser);
+           connect($returnUser);
 
-           echo "test"; // 
+        //    if ($res) {
+        //        echo "connection autorisée";
+        //    } else {
+        //        echo "connection interdite";
+        //    }
        }
        
        if ($_GET["type"] === "register") {

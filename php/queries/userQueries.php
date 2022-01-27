@@ -1,5 +1,5 @@
 <?php
-   $createUser = "INSERT INTO user SET
+   $createUser = "INSERT INTO users SET
       name_user = :name_user, 
       first_name_user = :first_name_user, 
       login_user = :login_user,
@@ -7,9 +7,8 @@
       email_user = :email_user,
       preferences_user = :preferences_user
    ";
-   $returnUser = "SELECT * FROM user 
-      WHERE login_user = :login_user AND pw_user = :pw_user
-   ";
+   $returnUser = "SELECT * FROM users WHERE login_user = :login_user 
+                  AND pw_user = '7aae59ca23176a31e4269b2ec8e2c59a3eb02c90'";
 
    function register($preparedQuery) {
       $condition = (
@@ -21,7 +20,7 @@
          isset($_POST['preferences_user'])
       );
       if ($condition) {
-         $password = $_POST['pw_user'];                  // ! Hash password here
+         $password = $_POST['pw_user'];                  
          $hashed_pw = sha1($password, false);
 
          queryDatabase($preparedQuery, array(
@@ -42,18 +41,19 @@
       );
       
       if ($condition) {
-         $password = $_POST['pw_user'];                  // ! Hash password here  
-         $hashed_pw = sha1($password, false);
-         $resp = queryDatabase($preparedQuery, array(
+         $password = $_POST['pw_user'];                  
+         // $hashed_pw = sha1($password, false);
+         
+         queryDatabase($preparedQuery, array(
             ':login_user' => $_POST['login_user'],
-            ':pw_user' => $hashed_pw
+            // ':pw_user' => $hashed_pw
          ));
-
-         // if (user correspond) {
-         //    return 1;
+         
+         // if ($resp[]) {
+         //    return True;
          // }
-         // else (user correspond) {
-         //    return 0;
+         // else {
+         //    return False;
          // }
 
       }

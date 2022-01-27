@@ -9,7 +9,14 @@
         $query = $database -> prepare($prepared);
         try {
             $success = $query->execute($queryArgs);
-            
+
+            $fichier = fopen("./test.txt", 'w+');
+            fwrite($fichier, $success);
+            while ($data = $query->fetch()) {
+                foreach ($data as $value) {
+                    fwrite($fichier, (string) $value . "\n");
+                }
+            }
 
         } catch (Exception $e) { 
             die("La requête a échoué !");

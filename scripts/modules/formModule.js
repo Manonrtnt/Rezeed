@@ -36,12 +36,18 @@ async function userQuery(url, form) {
             method: 'POST',
             body: data
     });   
+
     const servAnswer = await response.text();
+
     getServerAnswer(servAnswer);
 
     return response;
 }
 
 async function getServerAnswer(data) {
+
+    // Redirection de page
+    // Changement de theme
+
     console.log("data : ", data);
 }
