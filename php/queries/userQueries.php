@@ -8,7 +8,7 @@
       preferences_user = :preferences_user
    ";
    $returnUser = "SELECT * FROM user 
-      WHERE login_user = :login_user
+      WHERE login_user = :login_user AND pw_user = :pw_user
    ";
    $updateUser = "";
 

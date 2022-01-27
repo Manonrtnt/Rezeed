@@ -6,6 +6,7 @@ function connectionForm() {
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
         let resp = userQuery("./index.php?type=login", loginForm); // Envoie à index.php
+
         // if (true) {
         //     location.assign("./player.php"); // or
         // }

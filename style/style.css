@@ -34,48 +34,6 @@
     --font_04-bg-color: rgb(29, 48, 25);
 }
 
-/*------------------navbar-----------------------------------------------------*/
-header{
-    width: 100%;
-    height: 70px;
-    background-color: black;
-}
-
-/*------------------footer-----------------------------------------------------*/
-footer{
-    position: fixed;
-    width: 100%;
-    height: 35px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding-top: 25px;
-    bottom: 0;
-}
-/*-------------------navbar lien de droite--------------------------------------*/
-nav>ul{
-    display:flex;
-    color: white;
-    float: right;
-    margin-right: 25px;
-    margin-top:-12px;
-}
-li{
-    margin-right:15px;
-}
-/*--------------------Effet de surlignement--------------------------------------*/
-::after{
-    display:block;
-    content:"";
-    width:0;
-    height:1px;
-    background-color:var(--font_01-bg-color);
-    transition: .4s; 
-}
-li:hover::after{
-    width: 100%;    
-    background-color: rgb(255, 255, 255);
-}
 
 
 /*--------------------Formulaire--------------------------------------------------*/
@@ -87,21 +45,121 @@ main {
     margin-bottom: 50px;
 }
 
-section{
-    text-align: center;
 
-    margin: 15px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+
+body{
+    background-color: rgb(197, 181, 255);
+}
+/*----navbar-----*/
+header{
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+}
+/*----footer-----*/
+footer{
+    transition: 1s;
+    text-shadow: 1px 1px white;
+    position: fixed;
+    width: 100%;
+    height: 35px;
+    background-color: black;
+    color: rgb(73, 47, 116);
+    text-align: center;
+    padding-top: 15px;
+    bottom: 0;
+}
+footer:hover{
+    color: rgb(26, 128, 26);
+}
+nav>ul{
+    display:flex;
+    color: white;
+    float: right;
+    margin-right: 25px;
+    margin-top:-12px;
+    margin-top:23px;
+}
+li{
+    margin-right:15px;
+}
+/*Effet de surlignement*/
+::after{
+    display:block;
+    content:"";
+    width:0;
+    height:1px;
+    color: white;
+    transition: .4s; 
+}
+li:hover::after{
+    width: 100%;    
+    background-color: rgb(0, 224, 0);
+}
+li:hover{
+    color: rgb(0, 224, 0);;
+    text-shadow: 1px 1px white;
+    font-weight: 1500;
+}
+section{
+    width: 70%;
+    margin:auto;
+    bottom: 90px;
+    
+    transition: .4s;
+    transform: scale(1);
+    text-align: center;
+    margin: auto;
+    margin-top: 150px;
     border-style: solid;
+    border-width: 1px;
     width:25%;
     padding-top: 25px;
     padding-bottom: 25px;
-    border-radius: 5px;
-    background-color: rgb(82, 82, 82, 0.5);
+    border-radius: 0px;
+    background-color: rgb(82, 82, 82, 0.2);
     padding:25px;
 }
+
+/*section:hover{
+    transition: 1s;
+    transform: translate(250px, 200px);
+    animation-duration: 10s;
+    position: absolute;
+}*/
 input{
     border-radius: 5px;
 }
+button{
+    padding:10px;
+}
+
+/*-----Bouton formulaire------*/
 #bt1, #bt2{
     padding:4px;
+    margin-top: 10px;
+    background-color: rgb(146, 110, 192);
+    color: white;
 }
+#bt1:hover,
+#bt2:hover{
+    background-color:white ;
+    color: rgb(146, 110, 192);
+}
+/*
+#img_right{
+    position: absolute;
+    top: 200px;
+    margin-left: 70%;
+    display: flex;
+}
+*/
+#logo{
+    display: absolute;
+}
+
+
