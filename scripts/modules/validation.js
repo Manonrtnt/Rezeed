@@ -3,7 +3,7 @@ function validatePassword(password) {
     return validationRegex.test(password);
 }
 function validatePseudo(pseudo) {
-    const validationRegex = /^[a-zA-Z]{4,10}[0-9]{0,3}$/;
+    const validationRegex = /^[a-zA-Z]{4,10}[0-9]{0,3}$/;       // 13 caractères max
     return validationRegex.test(pseudo);
 }
 

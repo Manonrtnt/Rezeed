@@ -52,18 +52,18 @@
                 <h3>Créer un utilisateur</h3>
 
                 <p>Nom :</p>
-                <input type="text" name="name_user" required>
+                <input type="text" name="name_user" value="Test1111" required>
                 <p>Prénom :</p>
-                <input type="text" name="first_name_user" required>
+                <input type="text" name="first_name_user" value="Test1111" required>
 
                 <p>Login :</p>
-                <input type="text" name="login_user" required>
+                <input type="text" name="login_user" value="Test111" required>
                 <p>Mot de passe :</p>
-                <input type="password" name="pw_user" required>
+                <input type="password" name="pw_user" value="Azerty1!" required>
                 <p>Confirmer mot de passe :</p>
-                <input type="password" name="pwd2_user" required>
+                <input type="password" name="pwd2_user" value="Azerty1!" required>
                 <p>Email :</p>
-                <input type="email" name="email_user" required><br/>
+                <input type="email" name="email_user" value="azerty@azerty.fr"required><br/>
 
                 <select name=preferences_user>
                     <option value=classique>Classique</option>

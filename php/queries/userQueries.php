@@ -26,7 +26,7 @@
       }
    }
    // Retourne True si le pseudo / email / mot de passe est disponible 
-   // Sinon retourne "Peudo" ou "Email"
+   // Sinon retourne "Pseudo" ou "Email"
    function register() {
       $condition = (
          isset($_POST['name_user']) &&
@@ -49,25 +49,28 @@
 
          $password = $_POST['pw_user'];                  
          $hashed_pw = sha1($password, false);
-         
-         if ($_POST['preferences_user'] === "Classique") $idGenre = 1;
-         if ($_POST['preferences_user'] === "Electro") $idGenre = 2;
-         if ($_POST['preferences_user'] === "Jazz") $idGenre = 3;
-         if ($_POST['preferences_user'] === "Pop") $idGenre = 4;
-         if ($_POST['preferences_user'] === "Rap") $idGenre = 5;
-         if ($_POST['preferences_user'] === "Reggae") $idGenre = 6;
-         if ($_POST['preferences_user'] === "Rock") $idGenre = 7;
-         
-         fileLog($idGenre);
 
-         queryDatabase($registerCheck, array(
-            ':name_user' => $_POST['name_user'],
-            ':first_name_user' => $_POST['first_name_user'],
-            ':login_user' => $_POST['login_user'],
-            ':pw_user' => $hashed_pw,
-            ':email_user' => $_POST['email_user'],
-            ':preferences_user' => 1
-         ));
+         $resp = getIdGenre($_POST['preferences_user']); 
+         fileLog($resp);
+
+         // queryDatabase($registerCheck, array(
+         //    ':name_user' => $_POST['name_user'],
+         //    ':first_name_user' => $_POST['first_name_user'],
+         //    ':login_user' => $_POST['login_user'],
+         //    ':pw_user' => $hashed_pw,
+         //    ':email_user' => $_POST['email_user'],
+         //    ':preferences_user' => $idGenre
+         // ));
       }
+   }
+
+   function getIdGenre($str) {        
+      $fetchId = "SELECT id_genre FROM genre 
+         WHERE name_genre = :name_genre"; 
+
+      $resp = queryDatabase($fetchId, array(
+         ':name_genre' => $str
+      ));
+      return $resp[0];
    }
 ?>

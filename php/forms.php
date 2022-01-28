@@ -16,7 +16,6 @@
         }
                 
         if ($_GET["type"] === "register") {
-
             $authorization = register();            // Autorise inscription
 
             if ($authorization) {

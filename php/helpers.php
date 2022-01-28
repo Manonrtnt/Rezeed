@@ -2,6 +2,6 @@
    //============= HELPERS FUNCTIONS =================//
    
    function fileLog($text) {
-      fwrite(fopen(getcwd()."/logs.txt", "w"), " - " . $text . " - ");
+      fwrite(fopen("./logs.txt", "a+"), $text);
    }
 ?>

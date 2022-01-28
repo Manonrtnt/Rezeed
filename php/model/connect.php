@@ -12,7 +12,6 @@
 
         try {
             $success = $query->execute($queryArgs);
-            // fileLog("2er" . $success);
 
         } catch (Exception $e) { 
             fileLog("Erreur requête SQL !" . $e);

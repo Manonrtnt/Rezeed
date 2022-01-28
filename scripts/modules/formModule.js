@@ -29,6 +29,7 @@ async function userQuery(url, form) {        // Gère les requêtes au controleu
             method: 'POST',
             body: data
     });   
+    console.log(response);
     const servAnswer = await response.text(); // Transforme le retour en texte
     getServerAnswer(servAnswer);              
 
