@@ -41,7 +41,7 @@
          $password = $_POST['pw_user'];                  
          $hashed_pw = sha1($password, false);
          
-         //== Todo: Check si login_user et email => disponible
+         //== Todo: Check si login_user et email => disponible // Et retourner le/les éléments indisponibles
          //== Insère dans table users et remplace le nom entré en input par l'id table genre // Fonctionnel
          $registerCheck = 
          "INSERT INTO users (name_user, first_name_user, login_user, pw_user, email_user, id_genre) 

@@ -1,7 +1,37 @@
-<?php
-    require "./playerVue.php";
-    require "./php/model/connect.php";
-    require "./php/queries/playlistQueries.php";
-    require "./php/queries/userQueries.php";
-    require "./php/helpers.php";
-?>
+// $_SESSION Pour gérer les sessions
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Reezed </title>
+        <link rel="stylesheet" href="./style/style.css">
+
+        <script src="./scripts/modules/validation.js"></script>
+        <script src="./scripts/modules/formModule.js" defer></script>
+        <script src="./scripts/index.js" defer></script>
+    </head>
+
+    <body>   
+        <header>
+            <nav id="nav">
+            <!-- <h1>Redeez</h1> -->  
+                <ul id="Navbar_links">
+                    <li>Acceuil</li>
+                    <li>À propos</li>
+                </ul>
+                <div id="logo">
+                    <img src="./img/redeez_logo.png" alt="" srcset="" height="70px" width="230px">
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <h1> BIENVENUE SUR VOTRE PAGE PERSONELLE</h1>
+        </main>
+        <footer>
+            <h3>Developped by : ManonTNT, Vazn and Riozacki</h3>
+        </footer>
+    </body>
+</html>
