@@ -38,7 +38,7 @@ async function userQuery(url, form) {        // Gère les requêtes au controleu
 async function getServerAnswer(data) {       // Traite le retour des requêtes
 
     if (data) {
-        location.assign("./player.php?");    // Redirection de page
+        location.assign("./indexPlayer.php?");    // Redirection de page
     } else {
         alert("Arrétez d'essayer de vous introduire sur notre site !!!");
     }
