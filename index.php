@@ -1,4 +1,3 @@
-// $_SESSION Pour gérer les sessions
 <!DOCTYPE html>
 <html lang="en">
     <head>
