@@ -9,7 +9,7 @@
             $authorization = connect();             // Autorise connection
 
             if ($authorization) {
-                echo True;                          // Retourne vers JS
+                echo True;                          // Retourne vers JS et redirige vers player.php
             } else {
                 echo False;
             }
@@ -19,9 +19,11 @@
             $authorization = register();            // Autorise inscription
 
             if ($authorization) {
-                echo True;                          // Retourne vers JS
+                // Après inscription, connection automatique ?
+
+                echo True;                          // Retourne vers JS et redirige vers player.php
             } else {
-                
+                echo False;
             }
         }
    }

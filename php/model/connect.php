@@ -1,5 +1,6 @@
 <?php
-    // Retourne $success qui contient des informations sur le succès de la requête BDD
+    // Retourne $success qui contient des informations sur le succès de l'envoi vers la BDD
+    // Retourne $count qui contient le nombre de lignes affectées par la requête.
     // Retourne $query qui permet de traiter les résultat de la requête BDD
     function queryDatabase($prepared, $queryArgs = NULL) { 
         $dsn = "mysql:host=localhost;dbname=rezeed";
@@ -12,12 +13,13 @@
 
         try {
             $success = $query->execute($queryArgs);
+            $count = $query->rowCount();
 
         } catch (Exception $e) { 
             fileLog("Erreur requête SQL !" . $e);
             die("La requête a échoué !");
         }
 
-        return [$success, $query];
+        return [$query, $count, $success];
     }
 ?>

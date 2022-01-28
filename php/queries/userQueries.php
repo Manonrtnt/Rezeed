@@ -17,7 +17,7 @@
             ':login_user' => $_POST['login_user'],
             ':pw_user' => $hashed_pw
          ));  
-         $array = $response[1]->fetch();
+         $array = $response[0]->fetch();
          if ($array === False) {
             return False;
          } else {
@@ -36,27 +36,35 @@
          isset($_POST['email_user']) &&
          isset($_POST['preferences_user'])
       );
-      //== Todo: Check si login_user et email => disponible
       
       if ($condition) {  
-         //== Insère dans table users et remplace le nom entré en input par l'id table genre
          $password = $_POST['pw_user'];                  
          $hashed_pw = sha1($password, false);
-
-         $registerCheck = "INSERT INTO users 
-         (name_user, first_name_user, login_user, pw_user, email_user, id_genre) 
-         VALUES (:name_user, :first_name_user, :login_user, :pw_user, :email_user, 
-         (SELECT id_genre FROM genre WHERE name_genre = :name_genre))
+         
+         //== Todo: Check si login_user et email => disponible
+         //== Insère dans table users et remplace le nom entré en input par l'id table genre // Fonctionnel
+         $registerCheck = 
+         "INSERT INTO users (name_user, first_name_user, login_user, pw_user, email_user, id_genre) 
+          VALUES (:name_user, :first_name_user, :login_user, :pw_user, :email_user, 
+          (SELECT id_genre FROM genre WHERE name_genre = :name_genre))
          ";
 
-         queryDatabase($registerCheck, array(
+         $response = queryDatabase($registerCheck, array(
             ':name_user' => $_POST['name_user'],
             ':first_name_user' => $_POST['first_name_user'],
             ':login_user' => $_POST['login_user'],
             ':pw_user' => $hashed_pw,
             ':email_user' => $_POST['email_user'],
             ':name_genre' => $_POST['preferences_user']
-         ));
+         ));  
+         $affectedRowsCount = $response[1];
+
+         if ($affectedRowsCount === 1) {
+            return True;
+         } else {
+            // Retourner quelles infos sont incorrectes
+            return False;
+         }
       }
    }
 ?>
