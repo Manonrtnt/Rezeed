@@ -9,9 +9,14 @@
         $database -> exec("set names utf8");
 
         $query = $database -> prepare($prepared);
+        fileLog("1er" . $query);
+
         try {
             $success = $query->execute($queryArgs);
+            // fileLog("2er" . $success);
+
         } catch (Exception $e) { 
+            fileLog("Erreur requête SQL !" . $e);
             die("La requête a échoué !");
         }
 
