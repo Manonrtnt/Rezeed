@@ -37,28 +37,17 @@
          isset($_POST['preferences_user'])
       );
       //== Todo: Check si login_user et email => disponible
-      //== Test de mettre la requête SELECT * FROM genre à la place de :preferences_user
       
       if ($condition) {  
-         $registerCheck = "INSERT INTO users SET         
-         name_user = :name_user, 
-         first_name_user = :first_name_user, 
-         login_user = :login_user,
-         pw_user = :pw_user,
-         email_user = :email_user,
-         id_genre = :preferences_user
-         ";
-
+         //== Insère dans table users et remplace le nom entré en input par l'id table genre
          $password = $_POST['pw_user'];                  
          $hashed_pw = sha1($password, false);
 
-         $fetchId = "SELECT * FROM genre 
-         WHERE name_genre = :name_genre";
-         $resp = queryDatabase($fetchId, array(
-            ':name_genre' => $_POST['preferences_user']
-         ));
-         $idGenre = ($resp[1]->fetch())[0];                // ID of user preference
-
+         $registerCheck = "INSERT INTO users 
+         (name_user, first_name_user, login_user, pw_user, email_user, id_genre) 
+         VALUES (:name_user, :first_name_user, :login_user, :pw_user, :email_user, 
+         (SELECT id_genre FROM genre WHERE name_genre = :name_genre))
+         ";
 
          queryDatabase($registerCheck, array(
             ':name_user' => $_POST['name_user'],
@@ -66,7 +55,7 @@
             ':login_user' => $_POST['login_user'],
             ':pw_user' => $hashed_pw,
             ':email_user' => $_POST['email_user'],
-            ':preferences_user' => $idGenre
+            ':name_genre' => $_POST['preferences_user']
          ));
       }
    }
