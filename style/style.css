@@ -18,7 +18,7 @@
     --body_03-bg-color: rgb(236, 240, 255);
     --body_04-bg-color: rgb(218, 255, 211);
     /*---------Couleur de la navbar--------*/
-    --nav_01-bg-color: rgb(0, 0, 0);
+    --nav_01-bg-color: rgb(60, 60, 60);
     --nav_02-bg-color: rgb(255, 209, 209);
     --nav_03-bg-color: rgb(148, 169, 248);
     --nav_04-bg-color: rgb(218, 255, 211);
@@ -50,13 +50,13 @@ main {
 
 
 body{
-    background-color: rgb(197, 181, 255);
+    background-color: var(--body_01-bg-color);
 }
 /*----navbar-----*/
 header{
     width: 100%;
     height: 70px;
-    background-color: black;
+    background-color: var(--nav_01-bg-color);
     position: fixed;
     top: 0;
 }
@@ -67,14 +67,14 @@ footer{
     position: fixed;
     width: 100%;
     height: 35px;
-    background-color: black;
+    background-color: var(--nav_01-bg-color);
     color: rgb(73, 47, 116);
     text-align: center;
     padding-top: 15px;
     bottom: 0;
 }
 footer:hover{
-    color: rgb(26, 128, 26);
+    color: var(--nav_01-bg-color);;
 }
 nav>ul{
     display:flex;
@@ -98,11 +98,12 @@ li{
 }
 li:hover::after{
     width: 100%;    
-    background-color: rgb(0, 224, 0);
+    background-color: var(--body_01-bg-color);
 }
 li:hover{
-    color: rgb(0, 224, 0);;
-    text-shadow: 1px 1px white;
+    cursor: pointer;
+    color: var(--body_01-bg-color);
+    text-shadow: 1px 1px 4px lightgrey;
     font-weight: 1500;
 }
 section{
@@ -114,7 +115,7 @@ section{
     transform: scale(1);
     text-align: center;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 80px;
     border-style: solid;
     border-width: 1px;
     width:25%;
@@ -140,15 +141,16 @@ button{
 
 /*-----Bouton formulaire------*/
 #bt1, #bt2{
+    cursor: pointer;
     padding:4px;
     margin-top: 10px;
-    background-color: rgb(146, 110, 192);
-    color: white;
+    background-color: var(--nav_01-bg-color);
+    color: var(--body_01-bg-color);
 }
 #bt1:hover,
 #bt2:hover{
-    background-color:white ;
-    color: rgb(146, 110, 192);
+    background-color: var(--body_01-bg-color) ;
+    color: var(--nav_01-bg-color);
 }
 /*
 #img_right{
