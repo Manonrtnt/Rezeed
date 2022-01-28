@@ -18,7 +18,6 @@
             ':pw_user' => $hashed_pw
          ));  
          $array = $response[1]->fetch();
-         
          if ($array === False) {
             return False;
          } else {

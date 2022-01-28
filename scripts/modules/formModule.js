@@ -30,7 +30,6 @@ async function userQuery(url, form) {        // Gère les requêtes au controleu
             body: data
     });   
     const servAnswer = await response.text(); // Transforme le retour en texte
-
     getServerAnswer(servAnswer);              
 
     return response;

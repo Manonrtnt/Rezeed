@@ -9,7 +9,6 @@
         $database -> exec("set names utf8");
 
         $query = $database -> prepare($prepared);
-        fileLog("1er" . $query);
 
         try {
             $success = $query->execute($queryArgs);
