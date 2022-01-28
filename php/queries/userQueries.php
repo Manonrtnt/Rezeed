@@ -37,6 +37,8 @@
          isset($_POST['preferences_user'])
       );
       //== Todo: Check si login_user et email => disponible
+      //== Test de mettre la requête SELECT * FROM genre à la place de :preferences_user
+      
       if ($condition) {  
          $registerCheck = "INSERT INTO users SET         
          name_user = :name_user, 
@@ -50,27 +52,22 @@
          $password = $_POST['pw_user'];                  
          $hashed_pw = sha1($password, false);
 
-         $resp = getIdGenre($_POST['preferences_user']); 
-         fileLog($resp);
+         $fetchId = "SELECT * FROM genre 
+         WHERE name_genre = :name_genre";
+         $resp = queryDatabase($fetchId, array(
+            ':name_genre' => $_POST['preferences_user']
+         ));
+         $idGenre = ($resp[1]->fetch())[0];                // ID of user preference
 
-         // queryDatabase($registerCheck, array(
-         //    ':name_user' => $_POST['name_user'],
-         //    ':first_name_user' => $_POST['first_name_user'],
-         //    ':login_user' => $_POST['login_user'],
-         //    ':pw_user' => $hashed_pw,
-         //    ':email_user' => $_POST['email_user'],
-         //    ':preferences_user' => $idGenre
-         // ));
+
+         queryDatabase($registerCheck, array(
+            ':name_user' => $_POST['name_user'],
+            ':first_name_user' => $_POST['first_name_user'],
+            ':login_user' => $_POST['login_user'],
+            ':pw_user' => $hashed_pw,
+            ':email_user' => $_POST['email_user'],
+            ':preferences_user' => $idGenre
+         ));
       }
-   }
-
-   function getIdGenre($str) {        
-      $fetchId = "SELECT id_genre FROM genre 
-         WHERE name_genre = :name_genre"; 
-
-      $resp = queryDatabase($fetchId, array(
-         ':name_genre' => $str
-      ));
-      return $resp[0];
    }
 ?>

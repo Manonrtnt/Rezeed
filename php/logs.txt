@@ -1,1 +1,7 @@
-1
+2777Erreur requête SQL !PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM genre 
+         WHERE name_genre = 'rock'' at line 7 in C:\Dev\Web\server\Rezeed\php\model\connect.php:14
+Stack trace:
+#0 C:\Dev\Web\server\Rezeed\php\model\connect.php(14): PDOStatement->execute(Array)
+#1 C:\Dev\Web\server\Rezeed\php\queries\userQueries.php(69): queryDatabase('INSERT INTO use...', Array)
+#2 C:\Dev\Web\server\Rezeed\php\forms.php(19): register()
+#3 {main}
