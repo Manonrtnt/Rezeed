@@ -10,7 +10,10 @@ create table genre (
 create table track (
     id_track int auto_increment primary key not null, 
     name_track varchar(50),
-    url_track text
+    url_track text,
+
+    id_genre int,
+    constraint fk_id_genre_track foreign key (id_genre) references genre(id_genre)
 );
 
 create table users (
@@ -55,3 +58,9 @@ insert into genre
 insert into users
 	values
 		(null, "root", "root", "root", "dc76e9f0c0006e8f919e0c515c66dbba3982f785", "root@root.root", 7);
+
+-- insert into track(null, name_track, url_track, id_genre)
+--     values 
+--         (null, "Les 4 saisons", "fazFLfk", 1)
+
+-- <iframe width="926" height="521" src="https://www.youtube.com/embed/FY4rp--Jgq4" 

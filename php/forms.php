@@ -19,8 +19,8 @@
             $authorization = register();            // Autorise inscription
 
             if ($authorization) {
-                // Après inscription, connection automatique ?
 
+                // Après inscription, connection automatique ?
                 echo True;                          // Retourne vers JS et redirige vers player.php
             } else {
                 echo False;

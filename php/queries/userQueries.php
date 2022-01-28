@@ -57,8 +57,8 @@
             ':email_user' => $_POST['email_user'],
             ':name_genre' => $_POST['preferences_user']
          ));  
-         $affectedRowsCount = $response[1];
 
+         $affectedRowsCount = $response[1];
          if ($affectedRowsCount === 1) {
             return True;
          } else {

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 /*--------------------reset---------------------------------------------------*/
 *{
@@ -34,20 +35,14 @@
     --font_04-bg-color: rgb(29, 48, 25);
 }
 
-
-
 /*--------------------Formulaire--------------------------------------------------*/
 
 main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    margin: 50px 0px 50px 0px;
 }
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-
 
 body{
     background-color: var(--body_01-bg-color);
@@ -112,10 +107,8 @@ section{
     bottom: 90px;
     
     transition: .4s;
-    transform: scale(1);
     text-align: center;
-    margin: auto;
-    margin-top: 80px;
+    margin-top: 20px;
     border-style: solid;
     border-width: 1px;
     width:25%;
@@ -126,12 +119,6 @@ section{
     padding:25px;
 }
 
-/*section:hover{
-    transition: 1s;
-    transform: translate(250px, 200px);
-    animation-duration: 10s;
-    position: absolute;
-}*/
 input{
     border-radius: 5px;
 }
@@ -164,4 +151,6 @@ button{
     display: absolute;
 }
 
+a:link    { color: white; }
+a:visited { color: white; }
 
