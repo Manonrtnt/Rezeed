@@ -2,14 +2,14 @@
     const currentPage = window.location.pathname;
 
     equalizer();                // Front modules
-    if (currentPage === "/Rezeed/index.php" || currentPage === "/Rezeed/") {    // Si sur page d'acceuil
+    if (currentPage === "/rezeed/index.php" || currentPage === "/Rezeed/") {    // Si sur page d'acceuil
         modalHandler();
     
         connectionForm();       // Form modules
         registerForm();
     } 
     
-    else if (currentPage == "/Rezeed/indexPlayer.php") {                        // Si sur page player
+    else if (currentPage == "/rezeed/indexPlayer.php") {                        // Si sur page player
         logOut();
     }
 })();
