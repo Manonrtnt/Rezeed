@@ -14,9 +14,18 @@
 
     if (isset($_GET["type"])) {
         if ($_GET["type"] === "register" && $registerData) {             
-            
+          
             $authorization = register();            // Autorise inscription
             if ($authorization) {
+
+                // session_start();
+
+                // fileLog($_SESSION);
+
+
+
+
+
                 echo True;                          // Retourne vers JS et redirige vers player.php
             } else {
                 echo False;

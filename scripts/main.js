@@ -1,5 +1,6 @@
 (function main() {
-    const currentPage = window.location.pathname;
+    const currentPage = window.location.pathname.toString().toLocaleLowerCase();
+    console.log("currentPage : ", currentPage)
 
     equalizer();                // Front modules
     if (currentPage === "/rezeed/index.php" || currentPage === "/rezeed/") {    // Si sur page d'acceuil

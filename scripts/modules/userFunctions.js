@@ -1,6 +1,5 @@
 async function logIn(data) {                           // Traite les connexions en fonction de l'autorisation serveur
     if (data) {
-
         fadeOut();
         setTimeout(() => {                              
             location.replace("./indexPlayer.php?");

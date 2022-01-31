@@ -5,10 +5,9 @@
 
 :root {
     --black: rgb(50, 50, 50);
-    --orange: #FF8E57;
     --yellow: #FFD769;
     --light: rgb(255, 254, 251);
-    --medium: rgb(230, 227, 200);
+    --medium: rgb(231, 229, 214);
 
     /*---------Couleur du body-------------*/
     --body_01-bg-color: rgb(255, 253, 248);

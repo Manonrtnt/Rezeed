@@ -18,7 +18,6 @@ function equalizer() {
          }
       });
 
-      console.log(duration);
       anime({
          targets: bar,
          direction: 'alternate',
