@@ -8,7 +8,7 @@
     --orange: #FF8E57;
     --yellow: #FFD769;
     --light: rgb(255, 254, 251);
-    --medium: rgb(230, 227, 200);
+    --medium: rgb(233, 229, 224);
 
     /*---------Couleur du body-------------*/
     --body_01-bg-color: rgb(255, 253, 248);
@@ -23,7 +23,7 @@
     /*---------Couleur du footer-----------*/
     --footer_01-bg-color: rgb(0, 0, 0);
     --footer_02-bg-color: rgb(255, 209, 209);
-    --footer_03-bg-color: rgb(180, 190, 224);
+    --footer_03-bg-color: rgb(236, 240, 255);
     --footer_04-bg-color: rgb(218, 255, 211);
     /*---------Couleur de la police--------*/
     --font_01-bg-color: rgb(0, 0, 0);
@@ -47,13 +47,11 @@
     position: absolute;
     animation: slideInFade 1.5s ease-in-out 0s 1 forwards;
     opacity: 0;
-    transition: opacity 1s, fill 1s;
+    transition: opacity 1s;
     stroke-width: 30px;
     stroke: white;
     fill: var(--yellow);
     fill-opacity: 0.8;
-    cursor: pointer;
-
 }
 
 a:link    { color: white; }
@@ -68,24 +66,18 @@ main {
     align-items: center;
     justify-content: center;
     margin: 100px 0px 50px 0px;
+
     opacity: 0;
-    animation: fadeIn 1s 2.5s forwards;
+    animation: fadeIn 1.2s 2.5s forwards;
 }
 
-#connexion_section {
-    width: 15%;
-    height: 235px;
-    padding:10px 15px 25px 15px ;
-    margin-top: 90px;
-}
-#register_section {
-    width: 20%;
-    margin-top: 400px;
-    padding:0px 15px 0px 15px ;
-}
 section{
+    z-index: 100;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    padding: 0px 0px 40px 0px ;
+    width: 65%;
     align-items: center;
     border-style: solid;
     border-width: 1px;
@@ -96,60 +88,22 @@ svg {
     position: absolute;
 }
 
-.modal {
-    position: absolute;
-    z-index: 200;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s, visibility 0.2s;
-    overflow: hidden;
-    border: 1px solid rgb(175, 175, 175);
+/*===========================// MAIN //========================*/
 
-}
-.cross {
-    position: absolute;
-    top: -5px;
-    left: 245px;
-    stroke-width: 5px;
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-}
-#cross2 {
-    left: 330px;
+h1  {
+   background-color: var(--yellow);
+   text-align: center;
+   width: 100%;
+   padding: 15px 0px 15px 0px ;
 }
 
-/*===========================// FORM //========================*/
-
-#register_form, #connexion_form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 15px 25px 25px 25px ;
-}
-#register_form {
-    justify-content: space-evenly;
-}
 h3, #footerLink {
     font-size: 1.5rem;
 }
 
-input, select{
-    padding: 5px;
-    border: rgb(170, 170, 170) solid 1px;
-    outline:none;
+iframe {
+   margin-top: 30px;
 }
-select {
-    margin-bottom: 5px;
-}
-label {
-    margin-top: 5px;
-}
-
-button{
-    padding:10px;
-}
-
 /*===========================// NAV //========================*/
 
 header{
@@ -173,7 +127,6 @@ nav>ul{
 li{
     margin-right:15px;
 }
-
 /*Effet de surlignement*/
 ::after{
     display:block;
@@ -190,7 +143,7 @@ li:hover::after{
 li:hover{
     cursor: pointer;
     color: var(--light);
-    text-shadow: 1px 1px 6px rgb(255, 255, 255);
+    text-shadow: 1px 1px 4px lightgrey;
     font-weight: 1500;
 }
 img {
@@ -201,6 +154,7 @@ img {
 }
 
 /*===========================// FOOTER //========================*/
+
 
 footer{
     transition: 1s;
@@ -225,41 +179,6 @@ footer:hover{
     top: 15px;
 }
 
-/*===========================// BUTTONS //========================*/
-
-main > div {
-    display: flex;
-    flex-direction: column;
-    bottom: 500px;
-    z-index: 100;
-}
-#loginButton, #registerButton {
-    font-size: 1.5rem;
-    margin: 10px;
-    padding:15px 25px 15px 25px;
-
-}
-
-.buttons{
-    border-radius: 999999999px;
-    transition: background-color 0.4s, color 0.2s;
-    border: none;
-    cursor: pointer;
-    padding:6px 16px 6px 16px ;
-    background-color: var(--black) ;
-    color: white;
-}
-
-.buttons:hover,
-.buttons:focus
-{
-    background-color: var(--yellow);
-    color: var(--black);
-}
-
-#logo{
-    display: absolute;
-}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -287,4 +206,3 @@ main > div {
         transform: translateY(0px);
     }
 }
-
