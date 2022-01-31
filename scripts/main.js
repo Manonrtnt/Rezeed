@@ -2,7 +2,7 @@
     const currentPage = window.location.pathname;
 
     equalizer();                // Front modules
-    if (currentPage === "/rezeed/index.php" || currentPage === "/Rezeed/") {    // Si sur page d'acceuil
+    if (currentPage === "/rezeed/index.php" || currentPage === "/rezeed/") {    // Si sur page d'acceuil
         modalHandler();
     
         connectionForm();       // Form modules
