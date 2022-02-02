@@ -1,6 +1,5 @@
 (function main() {
     const currentPage = window.location.pathname.toString().toLocaleLowerCase();
-    console.log("currentPage : ", currentPage)
 
     equalizer();                // Front modules
     if (currentPage === "/rezeed/index.php" || currentPage === "/rezeed/") {    // Si sur page d'acceuil
@@ -24,12 +23,32 @@ async function queryControler(url, type , data = null) {
             method: 'POST',
             body: data
     });
+    // JSON
+    const servAnswer = await response.json();                   // Transforme le retour en texte (todo json)
+
+    localStorage.setItem("UserData", JSON.stringify(servAnswer));
     
-    const servAnswer = await response.text();                   // Transforme le retour en texte (todo json)
-    
 
-    if (type === "login" || type === "register") logIn(servAnswer, "login");     
+    if (type === "register") {
+        if (servAnswer.success === false) {
+            if (servAnswer.pseudo === false) {
+                alert("Pseudo indisponible");
+            }
+            if (servAnswer.email === false) {
+                alert("Email indisponible");
+            }
+        } else {
+            login();
+        }
+    }
+    if (type === "login") {
+        if (servAnswer.success === true) {
+            localStorage.getItem("UserData");
 
-
+            logIn();
+        } else {
+            alert("L'intrusion sur un site sans autorisation est passible de 150 000€ d'amende !!! Vous recevrez l'amende d'ici 3 jours !");
+        }
+    }     
     return response;
 }

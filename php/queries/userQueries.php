@@ -1,30 +1,40 @@
 <?php
 
-   // Retourne True si la combinaison Pseudo / Mot de passe est valide // Sinon Faux
+   // Retourne données utilisateur si la combinaison Pseudo / Mot de passe est valide // Sinon Tableau vide
    function connect() {
-      $password = $_POST['pw_user'];                  
-      $hashed_pw = sha1($password);    
+      $hashed_pw = sha1($_POST['pw_user']);    
 
-      $connectionCheck = "SELECT * FROM users WHERE login_user = :login_user AND pw_user = :pw_user";
-      $response = queryDatabase($connectionCheck, array(      // Si pas de données correspondante => retourne False    
+      $connectionCheck = "SELECT name_genre FROM genre
+         JOIN users
+         WHERE genre.id_genre = users.id_genre
+         
+         AND users.login_user = :login_user 
+         AND users.pw_user = :pw_user
+      ";
+      $response = queryDatabase($connectionCheck, array( 
          ':login_user' => $_POST['login_user'],
          ':pw_user' => $hashed_pw
       ));  
 
-      $array = $response[0]->fetch();
-      if ($array === False) {
-         return False;
-      } else {
-         return True;
-      }
+      $userGenre = ($response[0]->fetch())[0];        // Résultat requête => genre préféré si user existe
 
+      if ($userGenre) {
+         $data = [
+            "success" => True,
+            "pseudo" => $_POST['login_user'],
+            "genre" => $userGenre
+         ];
+         return $data;                             // Retourne les data utilisateur
+      }  else {
+         return [];                                // Sinon tableau vide
+      }
    }
+
+
    // Retourne True si le pseudo & email est disponible 
    // Sinon retourne "Pseudo" ou "Email"
-   function register() {
-
-      $password = $_POST['pw_user'];                  
-      $hashed_pw = sha1($password, false);
+   function register() {           
+      $hashed_pw = sha1($_POST['pw_user']);
       
       //== Todo: Check si login_user et email => disponible // Et retourner le/les éléments indisponibles
       //== Insère dans table users et remplace le nom entré en input par l'id table genre // Fonctionnel
@@ -43,11 +53,20 @@
          ':name_genre' => $_POST['preferences_user']
       ));  
 
-      if ($response[1] === 1) {
-         return True;
-      } else {
-         // Retourner quelles infos sont incorrectes
-         return False;
-      }
+
+
+      // if () {              // Pas de problêmes
+      //    return [];
+      // } else {             // Retourner quelles infos sont incorrectes
+
+      //    $data = [
+      //       "pseudo" => False,       // True si disponible, false sinon
+      //       "email" => False
+      //    ];
+
+      //    return $data;
+      // }
    }
+
+
 ?>

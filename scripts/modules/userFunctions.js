@@ -1,12 +1,8 @@
-async function logIn(data) {                           // Traite les connexions en fonction de l'autorisation serveur
-    if (data) {
-        fadeOut();
-        setTimeout(() => {                              
-            location.replace("./indexPlayer.php?");
-        }, 500)
-    } else {
-        alert("Arrétez d'essayer de vous introduire sur notre site !!!");
-    }
+async function logIn() {                           // Traite les connexions en fonction de l'autorisation serveur
+    fadeOut();
+    setTimeout(() => {                              
+        location.replace("./indexPlayer.php?");
+    }, 500)
 }
 
 function logOut() {                                   // Déconnecte, pas besoin d'autorisation.             
