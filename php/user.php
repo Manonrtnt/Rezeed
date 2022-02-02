@@ -15,14 +15,14 @@
     if (isset($_GET["type"])) {
         if ($_GET["type"] === "register" && $registerData) {   
 
-            $arr = register();              // Retourne tableau qui contient "success"
-            echo json_encode($arr);   
+            $arr = json_encode(register());              // Retourne tableau qui contient "success"
+            echo $arr;   
         }
 
         if ($_GET["type"] === "login" && $loginData) {
 
-            $data = connect();             // Retourne tableau qui contient "success"   
-            echo json_encode($data);
+            $data = json_encode(connect());             // Retourne tableau qui contient "success"   
+            echo $data;
         }
         
         if ($_GET["type"] === "logout") {

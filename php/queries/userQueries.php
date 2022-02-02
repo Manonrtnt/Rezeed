@@ -17,19 +17,18 @@
 
       $userGenre = ($response[0]->fetch())[0];        // Résultat requête => genre préféré si user existe
       $data = [
-         "success" => null,
+         "check_success" => null,
          "pseudo" => $_POST['login_user'],
          "genre" => $userGenre
       ];
       
       if ($userGenre) {
-         $data["success"] = True;                   
+         $data["check_success"] = True;                   
       }  else {
-         $data["success"] = False;                       
+         $data["check_success"] = False;                       
       }
       return $data;
    }
-
 
    // Retourne True si le pseudo & email est disponible 
    // Sinon retourne "Pseudo" ou "Email"
@@ -37,7 +36,7 @@
       $hashed_pw = sha1($_POST['pw_user']);
       
       $arr = checkDuplicates();
-      if (!$arr["success"]) return $arr;
+      if (!$arr["check_success"]) return $arr;
 
       $registerCheck =
       "INSERT INTO users (name_user, first_name_user, login_user, pw_user, email_user, id_genre) 
@@ -84,8 +83,8 @@
       $arr["email_user"] = checkMail();
 
       if ($arr["login_user"] && $arr["email_user"]) {
-         $arr["success"] = True;
-      } else $arr["success"] = False;
+         $arr["check_success"] = True;
+      } else $arr["check_success"] = False;
 
       return $arr;
    }
