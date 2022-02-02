@@ -1,12 +1,10 @@
 <?php
-   // Retourne données utilisateur si la combinaison Pseudo / Mot de passe est valide // Sinon Tableau vide
    function connect() {
       $hashed_pw = sha1($_POST['pw_user']);    
 
       $connectionCheck = "SELECT name_genre FROM genre
          JOIN users
          WHERE genre.id_genre = users.id_genre
-
          AND users.login_user = :login_user 
          AND users.pw_user = :pw_user
       ";
@@ -32,14 +30,11 @@
       return $data;
    }
 
-   // Retourne True si le pseudo & email est disponible 
-   // Sinon retourne "Pseudo" ou "Email"
    function register() {           
       $hashed_pw = sha1($_POST['pw_user']);
       
       $arr = checkDuplicates();
       if (!$arr["check_success"]) return $arr;
-      $arr["login_user"] = $_POST['login_user'];
 
       $registerCheck =
       "INSERT INTO users (name_user, first_name_user, login_user, pw_user, email_user, id_genre) 
@@ -47,7 +42,7 @@
          (SELECT id_genre FROM genre WHERE name_genre = :name_genre))
       ";
 
-      $response = queryDatabase($registerCheck, array(
+      queryDatabase($registerCheck, array(
          ':name_user' => $_POST['name_user'],
          ':first_name_user' => $_POST['first_name_user'],
          ':login_user' => $_POST['login_user'],
@@ -59,14 +54,13 @@
       return $arr;
    }
 
-   // Vérification pseudo ou email unique
-   function checkPseudo()  { // Retourne true si pseudo dispo
+   function checkPseudo()  {   // Retourne true si pseudo dispo
       $myQuery = 'SELECT * FROM users WHERE login_user = :login_user';
       $resp = queryDatabase($myQuery, array(
          ':login_user' => $_POST['login_user'],
       ));
-      $result = $resp[0]->fetch();        // Résultat requête => genre préféré si user existe
-
+      $result = $resp[0]->fetch();        
+      
       return !is_array($result);
    }
    function checkMail(){      // Retourne true si mail dispo
@@ -74,7 +68,7 @@
       $resp = queryDatabase($myQuery, array(
          ':email_user' => $_POST['email_user'],
       ));
-      $result = $resp[0]->fetch();        // Résultat requête => genre préféré si user existe
+      $result = $resp[0]->fetch();        
 
       return !is_array($result);
    }

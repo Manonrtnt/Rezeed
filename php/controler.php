@@ -13,7 +13,8 @@
         isset($_POST['login_user']) && isset($_POST['pw_user'])
     );
 
-    if (isset($_GET["type"])) {   
+    if (isset($_GET["type"])) {    
+        
         //================// User Branches //================//
         
         if ($_GET["type"] === "register" && $registerData) {   
@@ -26,9 +27,6 @@
             
             echo $data;
         }  
-        if ($_GET["type"] === "logout") {
-            // Déconnecte
-        }
         
         //=============// Playlist Branches //===============//
         

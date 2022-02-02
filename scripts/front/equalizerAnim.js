@@ -1,6 +1,5 @@
 function equalizer() {
    
-   let duration = 3000;
    for (let i=1 ; i<25 ; i++) {
 
       let randDelay = Math.random() * 150;

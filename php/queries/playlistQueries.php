@@ -12,7 +12,7 @@
       $i = 1;
       while($donnees = $response[0]->fetch()){
 
-         // Crée tableau qui a pour clé "Nom de la musique" et pour valeur l'URL Youtube
+         // Crée tableau qui a pour clé "track_{i}" et pour valeur un tableau [nom, url]
          $playlist["track_".$i] = [$donnees['name_track'], $donnees['url_track']];      
          $i++;
       }
