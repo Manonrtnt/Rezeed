@@ -50,5 +50,8 @@ async function queryControler(url, type , data = null) {
             alert("L'intrusion sur un site sans autorisation est passible de 150 000€ d'amende !!! Vous recevrez l'amende d'ici 3 jours !");
         }
     }     
+    if (type === "logout") {
+        logOut();
+    }
     return response;
 }

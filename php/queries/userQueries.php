@@ -7,7 +7,7 @@
       $connectionCheck = "SELECT name_genre FROM genre
          JOIN users
          WHERE genre.id_genre = users.id_genre
-         
+
          AND users.login_user = :login_user 
          AND users.pw_user = :pw_user
       ";
@@ -53,19 +53,43 @@
          ':name_genre' => $_POST['preferences_user']
       ));  
 
+      $arr = checkDuplicates();
+
+      return $arr;
+   }
 
 
-      // if () {              // Pas de problêmes
-      //    return [];
-      // } else {             // Retourner quelles infos sont incorrectes
 
-      //    $data = [
-      //       "pseudo" => False,       // True si disponible, false sinon
-      //       "email" => False
-      //    ];
 
-      //    return $data;
-      // }
+   // Vérification pseudo ou email unique
+   function checkPseudo()  { // Retourne true si pseudo dispo
+      $myQuery = 'SELECT * FROM users WHERE login_user = :login_user';
+
+      $resp = queryDatabase($myQuery, array(
+         ':login_user' => $_POST['login_user'],
+      ));
+
+      return !$resp[0]; // Retourne $query
+   }
+   function checkMail(){      // Retourne true si mail dispo
+      $myQuery = 'SELECT * FROM users WHERE email_user = :email_user';
+      
+      $resp = queryDatabase($myQuery, array(
+         ':email_user' => $_POST['email_user'],
+      ));
+
+      return !$resp[0]; // Retourne $query
+   }
+   function checkDuplicates() {
+      $arr = [];
+      $arr["login_user"] = checkPseudo();
+      $arr["email_user"] = checkMail();
+
+      if ($arr["login_user"] && $arr["email_user"]) {
+         $arr["success"] = True;
+      } else { $arr["success"] = False; }
+
+      return $arr;
    }
 
 

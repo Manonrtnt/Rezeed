@@ -15,23 +15,8 @@
     if (isset($_GET["type"])) {
         if ($_GET["type"] === "register" && $registerData) {             
           
-
-            $authorization = register(); // Autorise inscription
-            if ($authorization) {
-
-                // session_start();
-
-
-                // Retourner le pseudo si besoin
-
-                $res = ["success" => $success, "pseudo" => $pseudo, "email" => $email];
-                echo json_encode($res);  
-
-                echo True;
-            } 
-            else {
-                echo False;
-            }
+            $arr = register(); // Autorise inscription
+            echo json_encode($arr);   
         }
 
         if ($_GET["type"] === "login" && $loginData) {
