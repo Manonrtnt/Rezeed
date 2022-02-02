@@ -19,7 +19,7 @@ function registerForm() {
         const failed = validateInfo(pseudo, password, password2);
         
         if (failed.length === 0) {
-            const data = new FormData(loginForm);
+            const data = new FormData(registerForm);
             queryControler("./php/user.php?type=register", "register", data); // Envoie requête au controleur => index.php
         }
     });
