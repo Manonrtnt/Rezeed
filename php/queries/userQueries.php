@@ -17,17 +17,18 @@
       ));  
 
       $userGenre = ($response[0]->fetch())[0];        // Résultat requête => genre préféré si user existe
-
+      $data = [
+         "success" => null,
+         "pseudo" => $_POST['login_user'],
+         "genre" => $userGenre
+      ];
+      
       if ($userGenre) {
-         $data = [
-            "success" => True,
-            "pseudo" => $_POST['login_user'],
-            "genre" => $userGenre
-         ];
-         return $data;                             // Retourne les data utilisateur
+         $data["success"] = True;                   
       }  else {
-         return [];                                // Sinon tableau vide
+         $data["success"] = False;                       
       }
+      return $data;
    }
 
 

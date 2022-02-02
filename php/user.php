@@ -15,20 +15,16 @@
     if (isset($_GET["type"])) {
         if ($_GET["type"] === "register" && $registerData) {             
           
-            $arr = register(); // Autorise inscription
+            $arr = register();              // Retourne tableau qui contient "success"
             echo json_encode($arr);   
         }
 
         if ($_GET["type"] === "login" && $loginData) {
 
-            $data = connect();             // Autorise connection
-            
-            if ($data["success"]) {                         // Si utilisateur existe
-                echo json_encode($data);                    // Retourne les data vers JS
-            } else {
-                echo null;
-            }
+            $data = connect();             // Retourne tableau qui contient "success"   
+            echo json_encode($data);
         }
+        
         if ($_GET["type"] === "logout") {
             // Déconnecte
         }
