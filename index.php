@@ -52,7 +52,7 @@
             <nav id="nav">
             <!-- <h1>Redeez</h1> -->  
                 <ul id="Navbar_links">
-                    <li>À propos</li>
+                    <li>About</li>
                 </ul>
                 <div id="logo">
                     <img src="./img/rezeed2.svg" height="70px">
@@ -69,37 +69,37 @@
             <section class="modal" id="connexion_section">
                 <form id="connexion_form">
                     <img class="cross" src="./img/cross.svg"/>
-                    <h3 style="font-size:1.5em";> Connexion </h3>
-                    <label for="login_user">Login</label>
+                    <h3 style="font-size:1.5em";> Connection </h3>
+                    <label for="login_user">Login :</label>
                     <input type="text" name="login_user" required>
-                    <label for="pw_user">Mot de passe</label>
+                    <label for="pw_user">Password :</label>
                     <input type="password" name="pw_user" required><br/>
 
-                    <input class="buttons" type="submit" value="Connexion" required>
+                    <input class="buttons" type="submit" value="Log in !" required>
                 </form>
             </section>
             <section class="modal" id="register_section">
                 <form id="register_form">
                     <img class="cross" id="cross2" src="./img/cross.svg"/>
-                    <h3>Créer un utilisateur</h3>
+                    <h3>Register !</h3>
 
-                    <label for="name_user">Nom :</label>
+                    <label for="name_user">Last name:</label>
                     <input type="text" name="name_user" value="Test1111" required>
-                    <label for="first_name_user">Prénom :</label>
+                    <label for="first_name_user">First name :</label>
                     <input type="text" name="first_name_user" value="Test1111" required>
 
                     <label for="login_user">Login :</label>
                     <input type="text" name="login_user" value="Test111" required>
-                    <label for="pw_user">Mot de passe :</label>
+                    <label for="pw_user">Password :</label>
                     <input type="password" name="pw_user" value="Azerty1!" required>
-                    <label for="pwd2_user">Confirmer mot de passe :</label>
+                    <label for="pwd2_user">Confirm your password :</label>
                     <input type="password" name="pwd2_user" value="Azerty1!" required>
                     <label for="email_user">Email :</label>
                     <input type="email" name="email_user" value="azerty@azerty.fr"required><br/>
 
-                    <label for="preferences_user">Votre style préféré :</label>
+                    <label for="preferences_user">Favorite genre :</label>
                     <select name=preferences_user>
-                        <option value=classique>Classique</option>
+                        <option value=classique>Classical</option>
                         <option value=electro>Electro</option>
                         <option value=jazz>Jazz</option>
                         <option value=Pop>Pop</option>
@@ -107,7 +107,7 @@
                         <option value=reggae>Reggae</option>
                         <option value=rock>Rock</option>
                     </select>
-                    <input class="buttons" type="submit" value="Envoyer !" required>
+                    <input class="buttons" type="submit" value="Send !" required>
                 </form>
             </section>
     

@@ -1,6 +1,7 @@
 <?php
     require "./model/connect.php";
     require "./queries/userQueries.php";
+    require "./queries/playlistQueries.php";
     require "../helpers.php";
 
     $registerData = (
@@ -12,30 +13,31 @@
         isset($_POST['login_user']) && isset($_POST['pw_user'])
     );
 
-    if (isset($_GET["type"])) {
-
+    if (isset($_GET["type"])) {   
         //================// User Branches //================//
-
+        
         if ($_GET["type"] === "register" && $registerData) {   
             $arr = json_encode(register());              // Retourne tableau qui contient "success"
-
+            
             echo $arr;   
         }
         if ($_GET["type"] === "login" && $loginData) {
             $data = json_encode(connect());             // Retourne tableau qui contient "success"   
-
+            
             echo $data;
         }  
         if ($_GET["type"] === "logout") {
             // Déconnecte
         }
-
+        
         //=============// Playlist Branches //===============//
-
+        
         if ($_GET["type"] === "playlist") {
-            // Va chercher playlist !
+            
+            $genre = file_get_contents('php://input');
+            $playlist = fetchPlaylist($genre);
 
-            // Retourne tableau de code à mettre dans URLs !
+            echo json_encode($playlist);
         }
    }
 ?>

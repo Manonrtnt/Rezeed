@@ -47,7 +47,7 @@
             <nav id="nav">
                 <!-- <h1>Redeez</h1> -->
                 <ul id="Navbar_links">
-                    <li>À propos</li>
+                    <li>About</li>
                     <li id="logoutButton">Log out</li>
                 </ul>
                 <div id="logo">
@@ -58,7 +58,7 @@
 
         <main>
             <section>
-                <h1> BIENVENUE <span class="user_pseudo"></span></h1>
+                <h1> WELCOME <span class="user_pseudo"></span></h1>
                 <iframe width="560" height="315" 
                     src="https://www.youtube.com/embed/GRxofEmo3HA" 
                     frameborder="0" 
