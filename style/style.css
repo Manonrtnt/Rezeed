@@ -157,7 +157,7 @@ header{
     background-color: var(--black);
     position: fixed;
     top: 0;
-
+    z-index: 2;
     opacity: 0;
     animation: fadeIn 1.2s 1.5s forwards;
 }

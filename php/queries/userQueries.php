@@ -14,19 +14,21 @@
          ':login_user' => $_POST['login_user'],
          ':pw_user' => $hashed_pw
       ));  
+      $result = $response[0]->fetch();    // Retourn tableau si ok, sinon booleen      
 
-      $userGenre = ($response[0]->fetch())[0];        // Résultat requête => genre préféré si user existe
       $data = [
          "check_success" => null,
          "pseudo" => $_POST['login_user'],
-         "genre" => $userGenre
+         "genre" => null
       ];
-      
-      if ($userGenre) {
+
+      if (is_array($result)) {
          $data["check_success"] = True;                   
-      }  else {
+         $data["genre"] = $result[0];
+      } else {
          $data["check_success"] = False;                       
-      }
+      }  
+
       return $data;
    }
 
@@ -62,20 +64,18 @@
       $resp = queryDatabase($myQuery, array(
          ':login_user' => $_POST['login_user'],
       ));
+      $result = $resp[0]->fetch();        // Résultat requête => genre préféré si user existe
 
-      $pseudoExist = ($resp[0]->fetch())[0];        // Résultat requête => genre préféré si user existe
-
-      return !$pseudoExist;
+      return !is_array($result);
    }
    function checkMail(){      // Retourne true si mail dispo
       $myQuery = 'SELECT * FROM users WHERE email_user = :email_user';   
       $resp = queryDatabase($myQuery, array(
          ':email_user' => $_POST['email_user'],
       ));
+      $result = $resp[0]->fetch();        // Résultat requête => genre préféré si user existe
 
-      $emailExist = ($resp[0]->fetch())[0];        // Résultat requête => genre préféré si user existe
-
-      return !$emailExist;
+      return !is_array($result);
    }
    function checkDuplicates() { 
       $arr = [];

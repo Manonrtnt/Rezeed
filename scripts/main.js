@@ -27,10 +27,9 @@ async function queryControler(url, type , data = null) {
     const servAnswer = await response.json();                   // Récupére le JSON retourné
     console.log("servAnswer : ", servAnswer);
 
-    // localStorage.setItem("UserData", JSON.stringify(servAnswer)); // json to string
+    localStorage.setItem("UserData", JSON.stringify(servAnswer)); // json to string
 
     if (type === "register") {
-        console.log(servAnswer);
         if (servAnswer.check_success === false) {
             if (servAnswer.login_user === false) {
                 alert("Pseudo indisponible");
@@ -39,7 +38,7 @@ async function queryControler(url, type , data = null) {
                 alert("Email indisponible");
             }
         } else {
-            login();
+            logIn();
         }
     }
     if (type === "login") {
