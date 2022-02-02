@@ -16,8 +16,9 @@
 
         <script src="./scripts/modules/validationModule.js"></script>
         <script src="./scripts/modules/userFunctions.js"></script>
+        <script src="./scripts/modules/controlerHandler.js"></script>
         <script src="./scripts/modules/formModule.js" defer></script>
-        <script src="./scripts/main.js" defer></script>
+        <script src="./scripts/index.js" defer></script>
     </head>
 
     <body>

@@ -13,20 +13,29 @@
     );
 
     if (isset($_GET["type"])) {
-        if ($_GET["type"] === "register" && $registerData) {   
 
+        //================// User Branches //================//
+
+        if ($_GET["type"] === "register" && $registerData) {   
             $arr = json_encode(register());              // Retourne tableau qui contient "success"
+
             echo $arr;   
         }
-
         if ($_GET["type"] === "login" && $loginData) {
-
             $data = json_encode(connect());             // Retourne tableau qui contient "success"   
+
             echo $data;
-        }
-        
+        }  
         if ($_GET["type"] === "logout") {
             // Déconnecte
+        }
+
+        //=============// Playlist Branches //===============//
+
+        if ($_GET["type"] === "playlist") {
+            // Va chercher playlist !
+
+            // Retourne tableau de code à mettre dans URLs !
         }
    }
 ?>

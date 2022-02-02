@@ -11,7 +11,8 @@
         <script src="./scripts/front/generic.js"></script>
         <script src="./scripts/front/animStates.js"></script>
         <script src="./scripts/front/equalizerAnim.js"></script>
-
+        <script src="./scripts/modules/controlerHandler.js"></script>
+        
         <script src="./scripts/modules/userFunctions.js"></script>
         <script src="./scripts/player.js" defer></script>
     </head>

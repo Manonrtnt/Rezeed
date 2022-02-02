@@ -12,7 +12,7 @@ function modalHandler() {
 
    window.addEventListener("mousedown", (e) => {	
       for (let i=0 ; i<allModals.length ; i++) {
-         if ( e.target === closeIcon[0] || e.target === closeIcon[1]) {
+         if (e.target === closeIcon[0] || e.target === closeIcon[1]) {
             allModals[i].style.opacity = '0';
             allModals[i].style.visibility = 'hidden';
          }

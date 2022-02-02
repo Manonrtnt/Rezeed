@@ -5,7 +5,7 @@ function connectionForm() {
         e.preventDefault();
 
         const data = new FormData(loginForm);
-        queryControler("./php/user.php?type=login", "login", data); // Envoie requête au controleur => index.php
+        queryControler("login", data); // Envoie requête au controleur => index.php
     });
 }
 function registerForm() {
@@ -20,7 +20,7 @@ function registerForm() {
         
         if (failed.length === 0) {
             const data = new FormData(registerForm);
-            queryControler("./php/user.php?type=register", "register", data); // Envoie requête au controleur => index.php
+            queryControler("register", data); // Envoie requête au controleur => index.php
         }
     });
 }

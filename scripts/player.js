@@ -3,5 +3,7 @@
    equalizer();                // Front modules
    
    logIn();
+
+   queryControler("playlist");
    logOut();
 })();
