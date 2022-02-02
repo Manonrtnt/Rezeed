@@ -39,6 +39,7 @@
       
       $arr = checkDuplicates();
       if (!$arr["check_success"]) return $arr;
+      $arr["login_user"] = $_POST['login_user'];
 
       $registerCheck =
       "INSERT INTO users (name_user, first_name_user, login_user, pw_user, email_user, id_genre) 
@@ -79,10 +80,10 @@
    }
    function checkDuplicates() { 
       $arr = [];
-      $arr["login_user"] = checkPseudo();
-      $arr["email_user"] = checkMail();
+      $arr["login_check"] = checkPseudo();
+      $arr["email_check"] = checkMail();
 
-      if ($arr["login_user"] && $arr["email_user"]) {
+      if ($arr["login_check"] && $arr["email_check"]) {
          $arr["check_success"] = True;
       } else $arr["check_success"] = False;
 

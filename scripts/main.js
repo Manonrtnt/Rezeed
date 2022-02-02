@@ -31,10 +31,10 @@ async function queryControler(url, type , data = null) {
 
     if (type === "register") {
         if (servAnswer.check_success === false) {
-            if (servAnswer.login_user === false) {
+            if (servAnswer.login_check === false) {
                 alert("Pseudo indisponible");
             }
-            if (servAnswer.email_user === false) {
+            if (servAnswer.email_check === false) {
                 alert("Email indisponible");
             }
         } else {
