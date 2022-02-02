@@ -18,7 +18,7 @@
 
       $data = [
          "check_success" => null,
-         "pseudo" => $_POST['login_user'],
+         "login_user" => $_POST['login_user'],
          "genre" => null
       ];
 

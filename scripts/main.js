@@ -1,17 +1,10 @@
-(function main() {
-    const currentPage = window.location.pathname.toString().toLocaleLowerCase();
+(function index() {
 
     equalizer();                // Front modules
-    if (currentPage === "/rezeed/index.php" || currentPage === "/rezeed/") {    // Si sur page d'acceuil
-        modalHandler();
-    
-        connectionForm();       // Form modules
-        registerForm();
-    } 
-    
-    else if (currentPage == "/rezeed/indexPlayer.php") {                        // Si sur page player
-        logOut();
-    }
+    modalHandler();
+
+    connectionForm();           // Form modules
+    registerForm();
 })();
 
 //==================// CONTROLLER CALL FUNCTION //====================//
@@ -24,10 +17,8 @@ async function queryControler(url, type , data = null) {
             body: data
     });
     // JSON
-    const servAnswer = await response.json();                   // Récupére le JSON retourné
-    console.log("servAnswer : ", servAnswer);
-
-    localStorage.setItem("UserData", JSON.stringify(servAnswer)); // json to string
+    const servAnswer = await response.json();                       // Récupére le JSON retourné
+    localStorage.setItem("UserData", JSON.stringify(servAnswer));   // json to string
 
     if (type === "register") {
         if (servAnswer.check_success === false) {
@@ -38,14 +29,13 @@ async function queryControler(url, type , data = null) {
                 alert("Email indisponible");
             }
         } else {
-            logIn();
+            location.reload();
         }
     }
     if (type === "login") {
-        if (servAnswer.success === true) {
-            localStorage.getItem("UserData");
-
-            logIn();
+        if (servAnswer.check_success === true) {
+            fadeOut();
+            location.replace("./indexPlayer.php?");            
         } else {
             alert("L'intrusion sur un site sans autorisation est passible de 150 000€ d'amende !!! Vous recevrez l'amende d'ici 3 jours !");
         }
