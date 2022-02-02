@@ -23,8 +23,9 @@ async function queryControler(url, type , data = null) {
         url, {
             method: 'POST',
             body: data
-    });   
-    const servAnswer = await response.text();                   // Transforme le retour en texte (json mieux ?)
+    });
+    
+    const servAnswer = await response.text();                   // Transforme le retour en texte (todo json)
     
 
     if (type === "login" || type === "register") logIn(servAnswer, "login");     

@@ -16,16 +16,15 @@
         if ($_GET["type"] === "register" && $registerData) {             
           
             $authorization = register();            // Autorise inscription
+
             if ($authorization) {
 
                 // session_start();
-
                 // fileLog($_SESSION);
 
 
 
-
-
+                // Retourner le pseudo si besoin
                 echo True;                          // Retourne vers JS et redirige vers player.php
             } else {
                 echo False;
@@ -35,6 +34,8 @@
         if ($_GET["type"] === "login" && $loginData) {
 
             $authorization = connect();             // Autorise connection
+            
+            // Retourner le pseudo si besoin
             if ($authorization) {
                 echo True;                          // Retourne vers JS et redirige vers player.php
             } else {
