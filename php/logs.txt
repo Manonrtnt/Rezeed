@@ -1,1 +1,4 @@
-Rockstring
+pseudo => false email => false
+pseudo => true email => false
+pseudo => false email => true
+pseudo => true email => true 

@@ -1,5 +1,4 @@
 <?php
-
    // Retourne données utilisateur si la combinaison Pseudo / Mot de passe est valide // Sinon Tableau vide
    function connect() {
       $hashed_pw = sha1($_POST['pw_user']);    
@@ -37,9 +36,10 @@
    function register() {           
       $hashed_pw = sha1($_POST['pw_user']);
       
-      //== Todo: Check si login_user et email => disponible // Et retourner le/les éléments indisponibles
-      //== Insère dans table users et remplace le nom entré en input par l'id table genre // Fonctionnel
-      $registerCheck = 
+      $arr = checkDuplicates();
+      if (!$arr["success"]) return $arr;
+
+      $registerCheck =
       "INSERT INTO users (name_user, first_name_user, login_user, pw_user, email_user, id_genre) 
          VALUES (:name_user, :first_name_user, :login_user, :pw_user, :email_user, 
          (SELECT id_genre FROM genre WHERE name_genre = :name_genre))
@@ -54,41 +54,38 @@
          ':name_genre' => $_POST['preferences_user']
       ));  
 
-      $arr = checkDuplicates();
-
       return $arr;
    }
-
-
-
 
    // Vérification pseudo ou email unique
    function checkPseudo()  { // Retourne true si pseudo dispo
       $myQuery = 'SELECT * FROM users WHERE login_user = :login_user';
-
       $resp = queryDatabase($myQuery, array(
          ':login_user' => $_POST['login_user'],
       ));
 
-      return !$resp[0]; // Retourne $query
+      $pseudoExist = ($resp[0]->fetch())[0];        // Résultat requête => genre préféré si user existe
+
+      return !$pseudoExist;
    }
    function checkMail(){      // Retourne true si mail dispo
-      $myQuery = 'SELECT * FROM users WHERE email_user = :email_user';
-      
+      $myQuery = 'SELECT * FROM users WHERE email_user = :email_user';   
       $resp = queryDatabase($myQuery, array(
          ':email_user' => $_POST['email_user'],
       ));
 
-      return !$resp[0]; // Retourne $query
+      $emailExist = ($resp[0]->fetch())[0];        // Résultat requête => genre préféré si user existe
+
+      return !$emailExist;
    }
-   function checkDuplicates() {
+   function checkDuplicates() { 
       $arr = [];
       $arr["login_user"] = checkPseudo();
       $arr["email_user"] = checkMail();
 
       if ($arr["login_user"] && $arr["email_user"]) {
          $arr["success"] = True;
-      } else { $arr["success"] = False; }
+      } else $arr["success"] = False;
 
       return $arr;
    }

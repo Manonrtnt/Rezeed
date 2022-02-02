@@ -24,10 +24,10 @@ async function queryControler(url, type , data = null) {
             body: data
     });
     // JSON
-    const servAnswer = await response.json();                   // Transforme le retour en texte (todo json)
+    const servAnswer = await response.json();                   // Récupére le JSON retourné
 
-    localStorage.setItem("UserData", JSON.stringify(servAnswer));
-    
+    localStorage.setItem("UserData", JSON.stringify(servAnswer)); // json to string
+
 
     if (type === "register") {
         if (servAnswer.success === false) {

@@ -13,8 +13,8 @@
     );
 
     if (isset($_GET["type"])) {
-        if ($_GET["type"] === "register" && $registerData) {             
-          
+        if ($_GET["type"] === "register" && $registerData) {   
+
             $arr = register();              // Retourne tableau qui contient "success"
             echo json_encode($arr);   
         }
