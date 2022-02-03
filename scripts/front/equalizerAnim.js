@@ -5,17 +5,6 @@ function equalizer() {
       let randDelay = Math.random() * 150;
       let randDuration = 2350 + Math.random() * 2500;
       let bar = document.querySelector(`#bar${i}`);
-      let clicked = 0;
-      bar.addEventListener("click", () => {
-         if (!clicked) {
-            bar.style.fill = "rgb(180, 190, 224)";
-            clicked = 1;
-         }
-         else {            
-            bar.style.fill = "#FFD769";
-            clicked = 0;
-         }
-      });
 
       anime({
          targets: bar,

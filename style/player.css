@@ -22,9 +22,6 @@
 
 /*===========================// MAIN //========================*/
 
-test {
-    fill: red;
-}
 *{
     margin:0;
     padding:0;
@@ -41,7 +38,7 @@ test {
     transition: opacity 1s;
     stroke-width: 30px;
     stroke: white;
-    fill: var(--yellow);
+    fill: var(--default);
     fill-opacity: 0.8;
 }
 
@@ -81,7 +78,7 @@ svg {
 /*===========================// MAIN //========================*/
 
 h1  {
-   background-color: var(--yellow);
+   background-color: var(--default);
    text-align: center;
    width: 100%;
    padding: 15px 0px 15px 0px ;
@@ -122,7 +119,7 @@ h3, #footerLink {
 
 .music_button:hover
 {
-    background-color: var(--yellow);
+    background-color: var(--default);
     color: var(--black);
 }
 
@@ -198,7 +195,7 @@ footer:hover{
     color: var(--medium);;
 }
 #footerLink {
-    color: var(--yellow);
+    color: var(--default);
     top: 15px;
 }
 
