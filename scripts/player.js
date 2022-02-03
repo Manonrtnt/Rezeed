@@ -11,6 +11,7 @@ function trackControls() {
    const root = "https://www.youtube.com/embed/";
    const userGenre = JSON.parse(localStorage.getItem('UserData')).genre;
    const playlistLink = JSON.parse(localStorage.getItem('PlaylistData'));
+   console.log("playlistLink : ", playlistLink);
    const iframe = document.querySelector("iframe");
    const buttons = Array.from(document.querySelectorAll(".music_button"));
 
