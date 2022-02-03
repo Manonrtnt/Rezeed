@@ -10,11 +10,8 @@ function logIn() {                           // Traite les connexions en fonctio
 function logOut() {                                   // Déconnecte, pas besoin d'autorisation.             
     const logoutButton = document.querySelector("#logoutButton")
     logoutButton.addEventListener("click", () => {
-        queryControler("./php/user.php?type=logout", "logout");
-
         fadeOut();
-        setTimeout(() => {                              
-            location.replace("./index.php?");
-        }, 500)
+        location.replace("./index.php?");
+        storage.clear();
     });
 }

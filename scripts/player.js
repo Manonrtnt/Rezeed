@@ -7,7 +7,7 @@
    const userGenre = JSON.parse(localStorage.getItem('UserData')).genre;
    const playlistLink = JSON.parse(localStorage.getItem('PlaylistData'));
 
-   // queryControler("playlist", userGenre);
+   queryControler("playlist", "Classique");
    
 
    logOut();

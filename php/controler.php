@@ -1,7 +1,7 @@
 <?php
     require "./model/connect.php";
-    require "./queries/userQueries.php";
-    require "./queries/playlistQueries.php";
+    require "./model/userQueries.php";
+    require "./model/playlistQueries.php";
     require "../helpers.php";
 
     $registerData = (
@@ -18,24 +18,75 @@
         //================// User Branches //================//
         
         if ($_GET["type"] === "register" && $registerData) {   
-            $arr = json_encode(register());              // Retourne tableau qui contient "success"
+            $failedConstraints = registerUser();
+            echo json_encode($failedConstraints);              
             
-            echo $arr;   
         }
+
         if ($_GET["type"] === "login" && $loginData) {
-            $data = json_encode(connect());             // Retourne tableau qui contient "success"   
-            
-            echo $data;
+            $data = connectUser();
+            echo json_encode($data);             
         }  
         
         //=============// Playlist Branches //===============//
         
         if ($_GET["type"] === "playlist") {
-            
-            $genre = file_get_contents('php://input');
-            $playlist = fetchPlaylist($genre);
+
+            $playlist = fetchPlaylist();
 
             echo json_encode($playlist);
         }
-   }
+    }
+
+    function connectUser() {
+        $query = readUser();
+        $result = $query[0]->fetch();    // Retourn tableau si ok, sinon booleen      
+        
+        $data = [
+            "check_success" => null,
+            "login_user" => $_POST['login_user'],
+            "genre" => null
+        ];
+        
+        if (is_array($result)) {
+            $data["check_success"] = True;                   
+            $data["genre"] = $result[0];
+        } else {
+            $data["check_success"] = False;                       
+        }
+
+        return $data;
+    }
+    function registerUser() {
+        $arr = checkDuplicates();
+        if ($arr["check_success"]) {
+            createUser();
+        } 
+        return $arr;
+    }
+    function checkDuplicates() {
+        $arr = [];
+        $arr["login_check"] = checkPseudo();
+        $arr["email_check"] = checkMail();
+
+        if ($arr["login_check"] && $arr["email_check"]) {
+            $arr["check_success"] = True;
+        } else $arr["check_success"] = False;
+
+        return $arr;
+    }
+
+    function fetchPlaylist() {
+
+        $response = readPlaylist(file_get_contents('php://input'));    
+        $playlist = [];
+        $i = 1;
+        while($donnees = $response[0]->fetch()){
+  
+           // Crée tableau qui a pour clé "track_{i}" et pour valeur un tableau [nom, url]
+           $playlist["track_".$i] = [$donnees['name_track'], $donnees['url_track']];      
+           $i++;
+        }
+        return $playlist;
+    }
 ?>

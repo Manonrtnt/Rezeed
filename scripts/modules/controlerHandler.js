@@ -6,28 +6,25 @@ async function queryControler(type , data = null) {
            body: data
     });
     const servAnswer = await response.json();                       // Récupére le JSON retourné
-    //Uncaught (in promise) SyntaxError: Unexpected end of JSON input
+    console.log("servAnswer : ", servAnswer)
     
+
     if (type === "register") {
-        if (servAnswer.check_success === false) {
-            if (servAnswer.login_check === false) {
-                alert("Pseudo indisponible");
-            }
-            if (servAnswer.email_check === false) {
-                alert("Email indisponible");
-            }
-        } else {
+        if (servAnswer.check_success) {
             location.reload();
+        } else {
+            if (servAnswer.login_check === false) alert("Pseudo indisponible");
+            if (servAnswer.email_check === false) alert("Email indisponible");
         }
     }
     if (type === "login") {
         localStorage.setItem("UserData", JSON.stringify(servAnswer));   // json to string
 
-        if (servAnswer.check_success === true) {
+        if (servAnswer.check_success) {
             fadeOut();
             location.replace("./indexPlayer.php?");
         } else {
-            alert("L'intrusion sur un site sans autorisation est passible de 150 000€ d'amende !!! Vous recevrez l'amende d'ici 3 jours !");
+            alert("L'intrusion sur un site sans autorisation est passible de 150 000€ d'amende !!! Vous recevrez l'amende d'ici 3 jours !");  
         }
     }     
     if (type === "playlist") {
