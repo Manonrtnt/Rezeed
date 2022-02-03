@@ -52,8 +52,8 @@
                 <li>About</li>
                 <li id="logoutButton">Log out</li>
             </ul>
-            <div id="logo">
-                <img src="./img/default_logo.svg" id="test" height="70px">
+            <div>
+                <img src="./img/default_logo.svg" id="logo" height="70px">
             </div>
         </nav>
     </header>
@@ -73,7 +73,7 @@
                 </iframe>
 
                 <select name=Genre class="playerInput">
-                    <option value=classique> Classical</option>
+                    <option value=classical> Classical</option>
                     <option value=electro> Electro</option>
                     <option value=jazz> Jazz</option>
                     <option value=Pop> Pop</option>

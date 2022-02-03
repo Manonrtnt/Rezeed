@@ -4,7 +4,7 @@
 /*===========================// COLOR //========================*/
 
 :root {
-    --black: rgb(50, 50, 50);
+    --black: #323232;
     --default: #FFD769;
 
     --classical: #e5d8d0;
@@ -12,7 +12,7 @@
     --jazz: #f8b840;
     --pop: #CF8DAC;
     --rap: #db4747;
-    --reggae: #ccddae;
+    --reggae: #9dc062;
 
 
     --light: rgb(255, 254, 251);
@@ -38,7 +38,7 @@
     transition: opacity 1s, fill 1s;
     stroke-width: 30px;
     stroke: white;
-    fill: var(--yellow);
+    fill: var(--default);
     fill-opacity: 0.8;
     cursor: pointer;
 
@@ -245,9 +245,6 @@ main > div {
     color: var(--black);
 }
 
-#logo{
-    display: absolute;
-}
 @keyframes fadeIn {
     from {
         opacity: 0;
