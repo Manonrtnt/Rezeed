@@ -121,6 +121,9 @@ iframe {
 .music_button{
     padding: 10px;
 }
+select {
+    padding: 10px;
+}
 /*===========================// NAV //========================*/
 
 header{
