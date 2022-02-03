@@ -1,7 +1,7 @@
 <?php
     require "./model/connect.php";
-    require "./model/userQueries.php";
-    require "./model/playlistQueries.php";
+    require "./model/userModel.php";
+    require "./model/playlistModel.php";
     require "../helpers.php";
 
     $registerData = (
