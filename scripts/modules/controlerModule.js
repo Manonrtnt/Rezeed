@@ -5,9 +5,7 @@ async function queryControler(type , data = null) {
            method: 'POST',
            body: data
     });
-    const servAnswer = await response.json();                       // Récupére le JSON retourné
-    console.log("servAnswer : ", servAnswer)
-    
+    const servAnswer = await response.json();                       // Récupére le JSON retourné    
 
     if (type === "register") {
         if (servAnswer.check_success) {

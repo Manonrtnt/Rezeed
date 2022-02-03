@@ -104,6 +104,19 @@ h3, #footerLink {
 iframe {
    margin-top: 30px;
 }
+
+#main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#buttonsDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /*===========================// NAV //========================*/
 
 header{
