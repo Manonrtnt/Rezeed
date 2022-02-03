@@ -197,6 +197,7 @@ footer{
     width: 100%;
     height: 35px;
     background-color: var(--black);
+    color: var(--default);
     
     padding: 10px 0px 12px 0px;
     bottom: 0;
@@ -241,7 +242,7 @@ main > div {
 .buttons:hover,
 .buttons:focus
 {
-    background-color: var(--yellow);
+    background-color:  var(--default);
     color: var(--black);
 }
 

@@ -27,13 +27,13 @@ async function playlistSwitch(type, data) {
    const buttons = Array.from(document.querySelectorAll(".music_button"));
    
    const color =  {
-      classical: ['#af8d78', "#323232", "#af8d78"],
-      electro: ['#b4bee0', "#323232", "#b4bee0"],
-      jazz: ['#f8b840', "#323232", "#f8b840"],
-      pop: ['#CF8DAC', "#323232", "#CF8DAC"],
-      rap: ['#db4747', "#FFFEFB", "#db4747"],    
-      reggae: ['#9dc062', "#323232", "#9dc062"],
-      rock: ['#323232', "#FFFEFB", "#858585"]
+      classical: ['#af8d78', "#323232", "#af8d78", "#af8d78"],
+      electro: ['#b4bee0', "#323232", "#b4bee0", "#b4bee0"],
+      jazz: ['#f8b840', "#323232", "#f8b840", "#f8b840"],
+      pop: ['#CF8DAC', "#323232", "#CF8DAC", "#CF8DAC"],
+      rap: ['#db4747', "#FFFEFB", "#db4747", "#db4747"],    
+      reggae: ['#9dc062', "#323232", "#9dc062", "#9dc062"],
+      rock: ['#323232', "#FFFEFB", "#858585", "#FFFEFB"]
    };
    
    let currentGenre = null;
@@ -57,7 +57,7 @@ async function playlistSwitch(type, data) {
    }
    h1.setAttribute("style", `background-color: ${color[currentGenre][0]}; color: ${color[currentGenre][1]};`);
 
-   footerLink.style.color = color[currentGenre][0];
+   footerLink.style.color = color[currentGenre][3];
    for (let button of buttons) {
       button.onmouseover = () => button.style.backgroundColor = color[currentGenre][2];
       button.onmouseleave = ()  => button.style.backgroundColor = "#323232";
