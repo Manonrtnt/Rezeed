@@ -19,7 +19,6 @@ async function trackControls() {
       playlistSwitch("user", e);
    });
 }
-
 async function playlistSwitch(type, data = null) {
    const root = "https://www.youtube.com/embed/";
    const iframe = document.querySelector("iframe");
