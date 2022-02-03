@@ -55,7 +55,7 @@ main {
     margin: 150px 0px 50px 0px;
 
     opacity: 0;
-    animation: fadeInMain 1.2s 2.5s forwards;
+    animation: fadeIn 1.2s 2.5s forwards;
 }
 
 section{
@@ -191,14 +191,6 @@ footer:hover{
     top: 15px;
 }
 
-@keyframes fadeInMain {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.9;
-    }
-}
 @keyframes fadeIn {
     from {
         opacity: 0;
