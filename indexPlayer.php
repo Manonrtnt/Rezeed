@@ -63,16 +63,16 @@
             <h1> WELCOME <span class="user_pseudo"></span></h1>
             <div id="main">
                 <div id="buttonsDiv">
-                    <input class="music_button" type="button" value="Test">
-                    <input class="music_button" type="button" value="Test">
-                    <input class="music_button" type="button" value="Test">
-                    <input class="music_button" type="button" value="Test">
-                    <input class="music_button" type="button" value="Test">
+                    <input class="music_button playerInput" type="button" value="Test">
+                    <input class="music_button playerInput" type="button" value="Test">
+                    <input class="music_button playerInput" type="button" value="Test">
+                    <input class="music_button playerInput" type="button" value="Test">
+                    <input class="music_button playerInput" type="button" value="Test">
                 </div>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/GRxofEmo3HA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
 
-                <select name=Genre>
+                <select name=Genre class="playerInput">
                     <option value=classique> Classical</option>
                     <option value=electro> Electro</option>
                     <option value=jazz> Jazz</option>

@@ -101,12 +101,9 @@ h3, #footerLink {
     font-size: 1.5rem;
 }
 
-iframe {
-   margin-top: 30px;
-}
-
 #main {
     width: 100%;
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -119,11 +116,28 @@ iframe {
     justify-content: center;
 }
 .music_button{
-    padding: 10px;
+    cursor: pointer;
+    width: 300px;
+    margin: 5px 0px 5px 0px ;
+    transition: background-color 0.3s, color 0.15s;
 }
-select {
+.playerInput {
+    border: none;
+    outline: none;
     padding: 10px;
+    color: white;
+    background-color: var(--black);
+    cursor: pointer;
 }
+
+.music_button:hover
+{
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+
+
 /*===========================// NAV //========================*/
 
 header{
@@ -174,7 +188,6 @@ img {
 }
 
 /*===========================// FOOTER //========================*/
-
 
 footer{
     transition: 1s;
