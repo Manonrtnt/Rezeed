@@ -32,7 +32,8 @@
         
         if ($_GET["type"] === "playlist") {
 
-            $playlist = fetchPlaylist();
+            $genre = file_get_contents('php://input');
+            $playlist = fetchPlaylist($genre);
 
             echo json_encode($playlist);
         }
@@ -76,9 +77,9 @@
         return $arr;
     }
 
-    function fetchPlaylist() {
+    function fetchPlaylist($genre) {
 
-        $response = readPlaylist(file_get_contents('php://input'));    
+        $response = readPlaylist($genre);    
         $playlist = [];
         $i = 1;
         while($donnees = $response[0]->fetch()){

@@ -63,15 +63,24 @@
             <h1> WELCOME <span class="user_pseudo"></span></h1>
             <div id="main">
                 <div id="buttonsDiv">
-                    <input type="button" value="Test">
-                    <input type="button" value="Test">
-                    <input type="button" value="Test">
-                    <input type="button" value="Test">
-                    <input type="button" value="Test">
+                    <input class="music_button" type="button" value="Test">
+                    <input class="music_button" type="button" value="Test">
+                    <input class="music_button" type="button" value="Test">
+                    <input class="music_button" type="button" value="Test">
+                    <input class="music_button" type="button" value="Test">
                 </div>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/GRxofEmo3HA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
-                <!-- menu déroulant genre -->
+
+                <select name=Genre>
+                    <option value=classique> Classical</option>
+                    <option value=electro> Electro</option>
+                    <option value=jazz> Jazz</option>
+                    <option value=Pop> Pop</option>
+                    <option value=rap> Rap</option>
+                    <option value=reggae> Reggae</option>
+                    <option value=rock> Rock</option>
+                </select>
             </div>
         </section>
     </main>
