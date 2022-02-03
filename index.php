@@ -55,7 +55,7 @@
                     <li>About</li>
                 </ul>
                 <div id="logo">
-                    <img src="./img/rezeed2.svg" height="70px">
+                    <img src="./img/default_logo.svg" height="70px">
                 </div>
             </nav>
         </header>

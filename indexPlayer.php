@@ -53,7 +53,7 @@
                 <li id="logoutButton">Log out</li>
             </ul>
             <div id="logo">
-                <img src="./img/rezeed2.svg" alt="" height="70px">
+                <img src="./img/default_logo.svg" id="test" height="70px">
             </div>
         </nav>
     </header>

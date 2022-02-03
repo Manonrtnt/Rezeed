@@ -5,31 +5,20 @@
 
 :root {
     --black: rgb(50, 50, 50);
-    --yellow: #FFD769;
-    --light: rgb(255, 254, 251);
-    --medium: rgb(231, 229, 214);
+    --default: #FFD769;
 
-    /*---------Couleur du body-------------*/
-    --body_01-bg-color: rgb(255, 253, 248);
-    --body_02-bg-color: rgb(255, 209, 209);
-    --body_03-bg-color: rgb(236, 240, 255);
-    --body_04-bg-color: rgb(218, 255, 211);
-    /*---------Couleur de la navbar--------*/
-    --nav_01-bg-color: rgb(60, 60, 60);
-    --nav_02-bg-color: rgb(255, 209, 209);
-    --nav_03-bg-color: rgb(148, 169, 248);
-    --nav_04-bg-color: rgb(218, 255, 211);
-    /*---------Couleur du footer-----------*/
-    --footer_01-bg-color: rgb(0, 0, 0);
-    --footer_02-bg-color: rgb(255, 209, 209);
-    --footer_03-bg-color: rgb(180, 190, 224);
-    --footer_04-bg-color: rgb(218, 255, 211);
-    /*---------Couleur de la police--------*/
-    --font_01-bg-color: rgb(0, 0, 0);
-    --font_02-bg-color: rgb(255, 255, 255);
-    --font_03-bg-color: rgb(28, 44, 100);
-    --font_04-bg-color: rgb(29, 48, 25);
+    --classical: #e5d8d0;
+    --electro: #b4bee0;
+    --jazz: #f8b840;
+    --pop: #CF8DAC;
+    --rap: #db4747;
+    --reggae: #ccddae;
+
+
+    --light: rgb(255, 254, 251);
+    --medium: rgb(233, 229, 224);
 }
+
 
 /*===========================// MAIN //========================*/
 
