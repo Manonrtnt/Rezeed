@@ -10,8 +10,8 @@ function logIn() {                           // Traite les connexions en fonctio
 function logOut() {                                   // Déconnecte, pas besoin d'autorisation.             
     const logoutButton = document.querySelector("#logoutButton")
     logoutButton.addEventListener("click", () => {
+        window.localStorage.clear();
         fadeOut();
         location.replace("./index.php?");
-        storage.clear();
     });
 }
