@@ -60,6 +60,8 @@
     }
     function registerUser() {
         $arr = checkDuplicates();
+
+        fileLog(json_encode($_POST["preferences_user"]));
         if ($arr["check_success"]) {
             createUser();
         } 

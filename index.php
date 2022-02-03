@@ -99,7 +99,7 @@
 
                     <label for="preferences_user">Favorite genre :</label>
                     <select name=preferences_user>
-                        <option value=classique>Classical</option>
+                        <option value=classical>Classical</option>
                         <option value=electro>Electro</option>
                         <option value=jazz>Jazz</option>
                         <option value=Pop>Pop</option>
