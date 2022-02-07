@@ -5,14 +5,16 @@ function connectionForm() {
         e.preventDefault();
 
         const data = new FormData(loginForm);
-        queryControler("login", data); // Envoie requête au controleur => index.php
+        queryControler("login", data); // ===>> Envoie requête au controleur
     });
 }
 function registerForm() {
     const registerForm = document.querySelector("#register_form");
+    const userFeedbackDiv = document.querySelector("#user_feedback");
     registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        
+        userFeedbackDiv.textContent = "";
+
         const pseudo = document.querySelector(`#register_form input[name=login_user]`).value;
         const password = document.querySelector(`#register_form input[name=pw_user]`).value;
         const password2 = document.querySelector(`#register_form input[name=pwd2_user]`).value;
@@ -20,7 +22,12 @@ function registerForm() {
         
         if (failed.length === 0) {
             const data = new FormData(registerForm);
-            queryControler("register", data); // Envoie requête au controleur => index.php
+            queryControler("register", data); // ===>> Envoie requête au controleur
+        } else {
+            let feedback = document.createElement("p");
+            feedback.textContent = `${failed} invalide !`;
+            feedback.style.color = "red";
+            userFeedbackDiv.appendChild(feedback);
         }
     });
 }

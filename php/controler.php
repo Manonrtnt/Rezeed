@@ -17,16 +17,18 @@
         
         //================// User Branches //================//
         
+        if ($_GET["type"] === "login" && $loginData) {
+            $data = connectUser();
+            echo json_encode($data);             
+        }  
+        
         if ($_GET["type"] === "register" && $registerData) {   
             $failedConstraints = registerUser();
             echo json_encode($failedConstraints);              
             
         }
 
-        if ($_GET["type"] === "login" && $loginData) {
-            $data = connectUser();
-            echo json_encode($data);             
-        }  
+
         
         //=============// Playlist Branches //===============//
         
@@ -85,8 +87,7 @@
         $playlist = [];
         $i = 1;
         while($donnees = $response[0]->fetch()){
-  
-           // Crée tableau qui a pour clé "track_{i}" et pour valeur un tableau [nom, url]
+           // Créer tableau qui a pour clé "track_{i}" et pour valeur un tableau [nom, url]
            $playlist["track_".$i] = [$donnees['name_track'], $donnees['url_track']];      
            $i++;
         }

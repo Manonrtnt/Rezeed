@@ -34,7 +34,7 @@
     position: absolute;
     animation: slideInFade 1.5s ease-in-out 0s 1 forwards;
     opacity: 0;
-    transition: opacity 1s;
+    transition: fill 0.2s;
     stroke-width: 30px;
     stroke: white;
     fill: var(--default);
@@ -80,6 +80,8 @@ h1  {
    text-align: center;
    width: 100%;
    padding: 15px 0px 15px 0px ;
+   transition: background-color 0.2s;
+
 }
 
 h3, #footerLink {
@@ -187,6 +189,8 @@ footer:hover{
     color: var(--medium);;
 }
 #footerLink {
+    transition: color 0.5s;
+
     color: var(--default);
     top: 15px;
 }

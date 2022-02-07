@@ -60,10 +60,11 @@
             </nav>
         </header>
 
-        <main>
+        <main>       
             <div>
                 <button id ="loginButton" class="buttons"> Login ! </button>
                 <button id ="registerButton" class="buttons"> Register ! </button>
+                <p id="success_feedback"></p>
             </div>
             
             <section class="modal" id="connexion_section">
@@ -108,6 +109,7 @@
                         <option value=rock>Rock</option>
                     </select>
                     <input class="buttons" type="submit" value="Send !" required>
+                    <div id="user_feedback"></div>
                 </form>
             </section>
     

@@ -10,8 +10,8 @@ function validatePseudo(pseudo) {
 function validateInfo(pseudo, password, password2 = null) {
     const failedConstraints = [];
 
-    if (!validatePseudo(pseudo)) failedConstraints.push("pseudo");
-    if (!validatePassword(password)) failedConstraints.push("password");
+    if (!validatePseudo(pseudo)) failedConstraints.push(" Pseudo");
+    if (!validatePassword(password)) failedConstraints.push(" Password");
     if (password2 !== null && password !== password2) {
         failedConstraints.push("Wrong confirmation password");
         alert("Et non ! Tu ne sais pas écrire deux fois un mdp, try again !"); 

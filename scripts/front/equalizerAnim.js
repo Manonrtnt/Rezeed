@@ -26,7 +26,6 @@ function equalizer() {
       })
    }
 
-
    anime({
       targets: `.bar`,
          direction: 'alternate',

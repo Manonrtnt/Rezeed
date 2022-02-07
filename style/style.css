@@ -40,8 +40,6 @@
     stroke: white;
     fill: var(--default);
     fill-opacity: 0.8;
-    cursor: pointer;
-
 }
 
 a:link    { color: white; }
@@ -68,7 +66,7 @@ main {
 }
 #register_section {
     width: 20%;
-    margin-top: 400px;
+    margin-top: 450px;
     padding:0px 15px 0px 15px ;
 }
 section{

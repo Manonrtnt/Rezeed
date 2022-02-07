@@ -4,4 +4,5 @@
 
     connectionForm();           // Form modules
     registerForm();
+    registerFeedback();
 })();
