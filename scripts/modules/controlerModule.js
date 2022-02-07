@@ -29,13 +29,11 @@ async function queryControler(type , data = null) {
             if (servAnswer.login_check === false) {
                 let feedback = document.createElement("p");
                 feedback.textContent = "Pseudo déja utilisé !";
-                feedback.style.color = "red";
                 userFeedbackDiv.appendChild(feedback);
             }
             if (servAnswer.email_check === false) {
                 let feedback = document.createElement("p");
                 feedback.textContent = "Email déja utilisé !";
-                feedback.style.color = "red";
                 userFeedbackDiv.appendChild(feedback);
             }
         }
